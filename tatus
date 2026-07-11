@@ -1,0 +1,36 @@
+  main                                        [m 5a85ced [[34morigin/main[m: behind 27] docs(security): add SECURITY.md
+  sprint/24-enterprise-knowledge-graph        [m 126050d feat(sprint24): initialize Enterprise Knowledge Graph and Unified Memory structure
+  sprint/26-enterprise-digital-twin-runtime   [m 531dc8e [[34morigin/sprint/26-enterprise-digital-twin-runtime[m] feat(sprint26): initialize Enterprise Digital Twin Runtime
+  sprint/27-autonomous-operations-self-healing[m 3c69b4f feat(sprint27): initialize Autonomous Operations & Self-Healing Platform
+  sprint/28-wms-intelligence                  [m bae9bf7 feat(sprint28): initialize WMS Intelligence & Warehouse Autonomous Operations
+  sprint/29-transport-intelligence            [m 54896bc feat(sprint29): initialize Transport Intelligence & Fleet Optimization
+  sprint/30-executive-ai-copilot              [m 93e9159 [[34morigin/sprint/30-executive-ai-copilot[m] feat(sprint30): initialize Executive AI Copilot & Enterprise Predictive Intelligence
+  sprint/31-enterprise-risk-resilience        [m fdc5346 [[34morigin/sprint/31-enterprise-risk-resilience[m] feat(sprint31): initialize Enterprise Risk & Resilience Intelligence
+  sprint/32-autonomous-enterprise-os          [m a2c6d35 [[34morigin/sprint/32-autonomous-enterprise-os[m] feat(sprint32): initialize Autonomous Enterprise Operating System
+  sprint/33-integration-validation            [m 5a68d20 [[34morigin/sprint/33-integration-validation[m] feat(sprint33): initialize Integration Validation & Production Readiness
+  sprint/34-enterprise-cicd-pipeline          [m 5d9c2d5 [[34morigin/sprint/34-enterprise-cicd-pipeline[m] feat(sprint34): initialize Enterprise CI/CD Pipeline
+  sprint/35-observability-aiops               [m eb5175e [[34morigin/sprint/35-observability-aiops[m] feat(sprint35): initialize Enterprise Observability & AIOps
+  sprint/36-enterprise-llm-platform           [m 61f5981 [[34morigin/sprint/36-enterprise-llm-platform[m] feat(sprint36): initialize Enterprise LLM Platform & Prompt Intelligence
+  sprint/37-security-governance               [m 5a85ced [[34morigin/sprint/37-security-governance[m] docs(security): add SECURITY.md
+  sprint/38-enterprise-integration            [m ad2d988 [[34morigin/sprint/38-enterprise-integration[m] feat(sprint38): enterprise integration foundation
+  sprint/39-system-validation                 [m 4df97ba [[34morigin/sprint/39-system-validation[m] feat(sprint39): add enterprise system readiness validation
+  sprint/40-end-to-end-runtime-validation     [m b59ee77 [[34morigin/sprint/40-end-to-end-runtime-validation[m] feat(sprint40): end-to-end enterprise runtime validation
+  sprint/41-performance-scalability           [m baaedf2 [[34morigin/sprint/41-performance-scalability[m] feat(sprint41): add enterprise performance baseline
+  sprint/42-enterprise-observability          [m 161e29a [[34morigin/sprint/42-enterprise-observability[m] feat(sprint42): enterprise observability and AI monitoring foundation
+  sprint/43-production-readiness              [m 1fafa39 [[34morigin/sprint/43-production-readiness[m] feat(sprint43): production readiness and deployment foundation
+  sprint/44-release-candidate-rc1             [m 11bc465 [[34morigin/sprint/44-release-candidate-rc1[m] feat(sprint44): release candidate rc1 foundation
+  sprint/45-mvp-pilot                         [m 53c90ec [[34morigin/sprint/45-mvp-pilot[m] feat(sprint45): enterprise MVP pilot foundation
+  sprint/46-production-deployment             [m fe0afe0 [[34morigin/sprint/46-production-deployment[m] feat(sprint46): production deployment readiness
+  sprint/47-operational-feedback-learning     [m cd89610 [[34morigin/sprint/47-operational-feedback-learning[m] feat(sprint47): operational feedback and continuous learning foundation
+  sprint/48-enterprise-e2e-usecase            [m 05a8c38 [[34morigin/sprint/48-enterprise-e2e-usecase[m] feat(sprint48): enterprise end-to-end MVP use case
+  sprint/49-realtime-data-connectors          [m e63ab4f [[34morigin/sprint/49-realtime-data-connectors[m] feat(sprint49): realtime enterprise data connectors foundation
+  sprint/50-ai-decision-optimization          [m d244a35 [[34morigin/sprint/50-ai-decision-optimization[m] feat(sprint50): AI decision optimization foundation
+  sprint/51-event-driven-recommendation       [m 87bd4cf [[34morigin/sprint/51-event-driven-recommendation[m] feat(sprint51): event-driven recommendation engine foundation
+  sprint/52-executive-live-dashboard          [m b129ee3 [[34morigin/sprint/52-executive-live-dashboard[m] feat(sprint52): executive live dashboard foundation
+  sprint/53-end-to-end-business-validation    [m cecea1a [[34morigin/sprint/53-end-to-end-business-validation[m] feat(sprint53): end-to-end business validation foundation
+  sprint/54-kpi-engine                        [m 36149ea [[34morigin/sprint/54-kpi-engine[m] feat(sprint54): implement enterprise KPI engine foundation
+  sprint/55-event-processing-engine           [m 8e69f7c [[34morigin/sprint/55-event-processing-engine[m] feat(sprint55): implement event processing engine foundation
+  sprint/56-executive-command-center-api      [m 01501a5 [[34morigin/sprint/56-executive-command-center-api[m] feat(sprint56): implement executive command center API foundation
+  sprint/57-digital-twin-runtime              [m df752b3 [[34morigin/sprint/57-digital-twin-runtime[m] feat(sprint57): implement digital twin runtime foundation
+  sprint/58-ai-recommendation-runtime         [m 1a8dab0 [[34morigin/sprint/58-ai-recommendation-runtime[m] feat(sprint58): implement AI recommendation runtime foundation
+* [32msprint/59-wms-live-integration              [m c70b4eb [[34morigin/sprint/59-wms-live-integration[m] feat(sprint59): implement WMS live integration adapter
