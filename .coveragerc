@@ -1,7 +1,7 @@
 [run]
 source =
-    services/guardian
+    services
 
 omit =
-    */__pycache__/*
     */tests/*
+    */__pycache__/*
