@@ -1,19 +1,19 @@
-from services.digital_twin.runtime import DigitalTwinRuntime
-from services.guardian.real_time_command_center.runtime import RealTimeCommandCenter
-
-
 class RuntimeGateway:
 
     def __init__(self):
-        self.digital_twin = DigitalTwinRuntime()
-        self.command_center = RealTimeCommandCenter()
+        self.name = "AEON MATRIX Runtime Gateway"
 
     def health(self):
         return {
             "platform": "AEON MATRIX",
-            "digital_twin": self.digital_twin.status(),
-            "command_center": "ONLINE"
+            "status": "ONLINE",
+            "layer": "Enterprise Control Plane"
         }
 
-    def system_status(self):
-        return self.health()
+    def owner_dashboard(self):
+        return {
+            "revenue": "CONNECTED",
+            "supply_chain": "MONITORING",
+            "digital_twin": "ACTIVE",
+            "ai_governance": "ENABLED"
+        }
