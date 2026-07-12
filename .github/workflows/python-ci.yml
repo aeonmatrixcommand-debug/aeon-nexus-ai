@@ -36,4 +36,4 @@ jobs:
         run: python -m pytest -v
 
       - name: Coverage
-        run: python -m pytest --cov=services --cov-report=term-missing --cov-fail-under=90
+        run: python -m pytest --cov=services --cov-report=term-missing --cov-fail-under=100
