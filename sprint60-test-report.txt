@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/py-utils/venvs/pytest/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/aeon-nexus-ai
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.12.1
+collecting ... collected 25 items
+
+tests/api/test_executive_api.py::test_health PASSED                      [  4%]
+tests/api/test_executive_api.py::test_kpi PASSED                         [  8%]
+tests/connectors/test_connector_structure.py::test_connector_structure PASSED [ 12%]
+tests/dashboard/test_dashboard_structure.py::test_dashboard_structure PASSED [ 16%]
+tests/decision/test_decision_engine_structure.py::test_decision_engine_structure PASSED [ 20%]
+tests/digital_twin/test_digital_twin_runtime.py::test_simulation PASSED  [ 24%]
+tests/e2e/test_business_flow.py::test_business_flow_structure PASSED     [ 28%]
+tests/e2e/test_enterprise_usecase.py::test_enterprise_usecase PASSED     [ 32%]
+tests/e2e/test_runtime_structure.py::test_runtime_structure PASSED       [ 36%]
+tests/events/test_event_processor.py::test_event_processor PASSED        [ 40%]
+tests/integration/test_integration_structure.py::test_structure PASSED   [ 44%]
+tests/kpi/test_kpi_engine.py::test_kpi_engine PASSED                     [ 48%]
+tests/mvp/test_mvp_structure.py::test_mvp_structure PASSED               [ 52%]
+tests/observability/test_observability.py::test_observability_structure PASSED [ 56%]
+tests/operational/test_operational_feedback.py::test_operational_feedback PASSED [ 60%]
+tests/performance/test_platform_baseline.py::test_core_components_exist PASSED [ 64%]
+tests/production/test_production_structure.py::test_production_structure PASSED [ 68%]
+tests/rc/test_rc1_structure.py::test_rc_structure PASSED                 [ 72%]
+tests/recommendation/test_recommendation_runtime.py::test_recommendation PASSED [ 76%]
+tests/recommendation/test_recommendation_structure.py::test_recommendation_structure PASSED [ 80%]
+tests/release/test_release_readiness.py::test_release_structure PASSED   [ 84%]
+tests/system/test_system_readiness.py::test_core_directories_exist PASSED [ 88%]
+tests/unit/test_kpi_validator.py::test_otif_validation PASSED            [ 92%]
+tests/unit/test_kpi_validator.py::test_inventory_accuracy PASSED         [ 96%]
+tests/wms/test_adapter.py::test_transform PASSED                         [100%]
+
+============================== 25 passed in 0.12s ==============================
