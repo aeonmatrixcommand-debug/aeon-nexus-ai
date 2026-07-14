@@ -1,120 +1,93 @@
-"""
-AEON MATRIX Command Center Runtime
 
-Real-Time Operations Control Layer
-KPI Monitoring
-Operational Decision
-Human Override
-"""
-
-
-class CommandCenter:
-
+class CommandCenterBrain:
 
     def __init__(self):
-        self.name = "AEON MATRIX Command Center"
-        self.events = []
+        self.name = "AEONMATRIX Command Center Brain"
+        self.snapshots = []
 
 
-    def ingest(self, event):
-        self.events.append(event)
+    def analyze(self, event, decision):
 
-        return {
-            "status": "received",
-            "events": len(self.events)
-        }
+        risk_score = decision.get(
+            "risk_score",
+            0
+        )
 
+        if risk_score >= 80:
+            priority = "critical"
+            action = "human_intervention"
 
-    def status(self, metrics=None):
+        elif risk_score >= 40:
+            priority = "warning"
+            action = "monitor"
 
-        metrics = metrics or {}
-
-        otif = metrics.get("otif", 0)
-
-        if otif >= 95:
-            health = "healthy"
-        elif otif >= 85:
-            health = "warning"
         else:
-            health = "risk"
+            priority = "normal"
+            action = "auto_execute"
 
 
-        return {
+        snapshot = {
             "system": "AEONMATRIX",
-            "engine": self.name,
-            "status": health,
-            "health": "green" if health == "healthy" else "yellow",
-            "metrics": metrics
+            "status": "completed",
+            "priority": priority,
+            "recommended_action": action,
+            "risk_score": risk_score,
+            "event": event,
+            "decision": decision,
+            "command_center": "active"
         }
 
 
-    def alert(self, level):
+        self.snapshots.append(snapshot)
 
-        if level == "high":
-            result = "critical"
-        elif level == "medium":
-            result = "warning"
-        else:
-            result = "normal"
+        return snapshot
+
+
+
+    def dashboard(self):
 
         return {
-            "level": result
+            "system":"AEONMATRIX",
+            "active_snapshots":len(self.snapshots),
+            "mode":"operational_intelligence"
         }
 
-
-
-class CommandCenterEngine:
-
-
-    def __init__(self):
-        self.name = "AEON MATRIX Command Center Engine"
-        self.events = []
-        self.state = {}
-
-
-    def ingest_event(self, event):
-
-        self.events.append(event)
-        self.state.update(event)
-
-        return {
-            "status": "accepted",
-            "event_count": len(self.events)
-        }
-
-
-    def analyze(self):
-
-        risk = self.state.get("risk","low")
-
-        if risk == "high":
-            alert = "critical"
-        elif risk == "medium":
-            alert = "warning"
-        else:
-            alert = "normal"
-
-
-        return {
-            "engine": self.name,
-            "alert": alert,
-            "state": self.state,
-            "events": len(self.events)
-        }
-
-
-    def override(self, action):
-
-        return {
-            "controller":"human_override",
-            "action":action,
-            "status":"approved"
-        }
 
 
     def health(self):
 
         return {
-            "status":"healthy",
-            "engine":self.name
+            "system":"AEONMATRIX",
+            "health":"green"
         }
+
+
+
+
+    def status(self, metrics):
+
+        otif = metrics.get("otif", 0)
+
+        if otif >= 95:
+            state = "excellent"
+        elif otif >= 90:
+            state = "healthy"
+        else:
+            state = "attention_required"
+
+        return {
+            "system": "AEONMATRIX",
+            "status": "completed",
+            "otif": otif,
+            "state": state,
+            "health": "green",
+            "command_center": "active"
+        }
+
+
+
+# Backward Compatibility Contract
+CommandCenter = CommandCenterBrain
+
+
+CommandCenter = CommandCenterBrain
