@@ -1,8 +1,10 @@
 
-class DemandForecastEngine:
+
+class DemandForecastIntelligence:
+
 
     def __init__(self):
-        self.forecasts = []
+        self.records = []
 
 
     def forecast(self, demand):
@@ -12,42 +14,36 @@ class DemandForecastEngine:
             "unknown"
         )
 
-        history = demand.get(
-            "historical_sales",
+        current_stock = demand.get(
+            "current_stock",
             0
         )
 
-        inventory = demand.get(
-            "inventory",
-            0
-        )
-
-        growth = demand.get(
-            "growth_rate",
+        predicted_demand = demand.get(
+            "forecast_demand",
             0
         )
 
 
-        prediction = int(
-            history * (1 + growth / 100)
-        )
+        if predicted_demand > current_stock:
+
+            inventory_risk = "shortage"
+
+            action = "replenishment_required"
 
 
-        if inventory < prediction * 0.3:
+        elif current_stock > predicted_demand * 2:
 
-            risk = "high"
-            replenishment = "required"
+            inventory_risk = "overstock"
 
-        elif inventory < prediction:
+            action = "inventory_optimization"
 
-            risk = "medium"
-            replenishment = "recommended"
 
         else:
 
-            risk = "low"
-            replenishment = "stable"
+            inventory_risk = "balanced"
 
+            action = "monitor"
 
 
         result = {
@@ -58,40 +54,30 @@ class DemandForecastEngine:
 
             "sku":sku,
 
-            "demand_prediction":prediction,
+            "forecast_demand":predicted_demand,
 
-            "stock_risk":risk,
+            "current_stock":current_stock,
 
-            "replenishment":replenishment,
+            "inventory_risk":inventory_risk,
 
-            "waste_prevention":"active",
+            "recommended_action":action,
 
-            "forecast_intelligence":"active",
+            "shelf_life_link":"enabled",
+
+            "value_recovery_link":"enabled",
 
             "command_center":"updated",
+
+            "trace":"active",
 
             "governance":"verified"
 
         }
 
 
-        self.forecasts.append(result)
+        self.records.append(result)
 
         return result
-
-
-
-    def recommend(self):
-
-        return {
-
-            "system":"AEONMATRIX",
-
-            "recommendation":"inventory_optimization",
-
-            "intelligence":"ready"
-
-        }
 
 
 
@@ -101,9 +87,9 @@ class DemandForecastEngine:
 
             "system":"AEONMATRIX",
 
-            "forecasts":len(self.forecasts),
+            "forecast_records":len(self.records),
 
-            "learning":"enabled"
+            "intelligence":"learning_ready"
 
         }
 
@@ -115,7 +101,7 @@ class DemandForecastEngine:
 
             "system":"AEONMATRIX",
 
-            "forecast_records":len(self.forecasts)
+            "records":len(self.records)
 
         }
 
@@ -130,4 +116,5 @@ class DemandForecastEngine:
             "health":"green"
 
         }
+
 
