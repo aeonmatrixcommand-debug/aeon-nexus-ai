@@ -249,3 +249,110 @@ def digital_twin_state():
         },
         "status": "READY"
     }
+
+
+@app.get("/intelligence/status")
+def intelligence_status():
+    return {
+        "intelligence": "ACTIVE",
+        "mode": "AUTONOMOUS_DECISION",
+        "engines": [
+            "Forecast Engine",
+            "Risk Engine",
+            "Decision Engine",
+            "Learning Engine"
+        ]
+    }
+
+
+@app.get("/intelligence/context")
+def intelligence_context():
+    return {
+        "context": {
+            "warehouse": "DC01",
+            "inventory": "REAL_TIME",
+            "transport": "MONITORING",
+            "demand": "ANALYZING"
+        }
+    }
+
+
+@app.post("/decisions/create")
+def create_decision():
+    return {
+        "id": "decision_001",
+        "status": "CREATED",
+        "recommendation": "REPLENISH_STOCK"
+    }
+
+
+@app.post("/decisions/{decision_id}/approve")
+def approve_decision(decision_id: str):
+    return {
+        "id": decision_id,
+        "approval": "APPROVED",
+        "governance": "PASSED"
+    }
+
+
+@app.post("/decisions/{decision_id}/execute")
+def execute_decision(decision_id: str):
+    return {
+        "id": decision_id,
+        "execution": "STARTED",
+        "status": "RUNNING"
+    }
+
+
+@app.get("/decisions/{decision_id}/trace")
+def decision_trace(decision_id: str):
+    return {
+        "id": decision_id,
+        "trace": [
+            "SIGNAL_RECEIVED",
+            "ANALYSIS_COMPLETE",
+            "POLICY_CHECK",
+            "EXECUTION_APPROVED"
+        ]
+    }
+
+
+@app.get("/memory/search")
+def memory_search():
+    return {
+        "memory": [
+            {
+                "event": "inventory_update",
+                "learning": "demand_pattern_detected"
+            }
+        ]
+    }
+
+
+@app.post("/memory/store")
+def memory_store():
+    return {
+        "status": "STORED",
+        "layer": "ENTERPRISE_MEMORY"
+    }
+
+
+@app.get("/risk/assessment")
+def risk_assessment():
+    return {
+        "risk_score": 12,
+        "level": "LOW",
+        "monitoring": "ACTIVE"
+    }
+
+
+@app.get("/kpi/dashboard")
+def kpi_dashboard():
+    return {
+        "kpi": {
+            "OTIF": 98.2,
+            "forecast_accuracy": 94.5,
+            "inventory_health": 96.1,
+            "risk_score": 12
+        }
+    }
