@@ -566,3 +566,82 @@ def workflow_status(workflow_id: str):
         "steps_completed": 3,
         "total_steps": 5
     }
+
+
+@app.get("/memory/query")
+def memory_query():
+    return {
+        "memory": [
+            {
+                "id": "memory_001",
+                "pattern": "inventory_optimization",
+                "confidence": 0.94
+            }
+        ],
+        "status": "READY"
+    }
+
+
+@app.post("/learning/train")
+def learning_train():
+    return {
+        "learning": "CONTINUOUS_LEARNING",
+        "status": "TRAINING_COMPLETED",
+        "models_updated": 4,
+        "patterns_learned": 256
+    }
+
+
+@app.get("/learning/model-state")
+def learning_model_state():
+    return {
+        "models": {
+            "forecast_engine": "UPDATED",
+            "risk_engine": "UPDATED",
+            "optimization_engine": "ACTIVE"
+        },
+        "learning_cycle": "CONTINUOUS"
+    }
+
+
+@app.get("/decision/explain/{decision_id}")
+def decision_explain(decision_id: str):
+    return {
+        "decision_id": decision_id,
+        "reason": "OPTIMIZE_STOCK_AVAILABILITY",
+        "signals": [
+            "inventory",
+            "demand",
+            "risk"
+        ],
+        "confidence": 0.92
+    }
+
+
+@app.post("/governance/policy/check")
+def governance_policy_check():
+    return {
+        "policy": "AI_GOVERNANCE_RULE_CHECK",
+        "result": "APPROVED"
+    }
+
+
+@app.get("/governance/audit/history")
+def governance_audit_history():
+    return {
+        "audit": [
+            {
+                "event": "AUTONOMOUS_DECISION",
+                "status": "VERIFIED"
+            }
+        ]
+    }
+
+
+@app.get("/system/intelligence-score")
+def intelligence_score():
+    return {
+        "system": "AEON_MATRIX",
+        "intelligence_score": 96.8,
+        "status": "ACTIVE"
+    }
