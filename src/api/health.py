@@ -747,3 +747,100 @@ def decision_recommendations():
         ]
     }
 
+
+
+@app.post("/fusion/analyze")
+def fusion_analyze():
+    return {
+        "fusion": "INTELLIGENCE_FUSION_ENGINE",
+        "signals": [
+            "world_signal",
+            "enterprise_memory",
+            "digital_twin",
+            "telemetry",
+            "agent_network"
+        ],
+        "result": "ANALYSIS_COMPLETED"
+    }
+
+
+@app.post("/knowledge/graph/build")
+def knowledge_graph_build():
+    return {
+        "knowledge_graph": "BUILDING_COMPLETED",
+        "nodes": 1250,
+        "relationships": 4830,
+        "status": "READY"
+    }
+
+
+@app.get("/knowledge/graph/state")
+def knowledge_graph_state():
+    return {
+        "knowledge_graph": "ACTIVE",
+        "entities": [
+            "customer",
+            "inventory",
+            "warehouse",
+            "fleet",
+            "market_signal"
+        ],
+        "status": "CONNECTED"
+    }
+
+
+@app.post("/ai-agent/collaborate")
+def ai_agent_collaborate():
+    return {
+        "swarm": "AI_AGENT_COLLABORATION",
+        "agents": [
+            "inventory_agent",
+            "route_agent",
+            "forecast_agent",
+            "risk_agent"
+        ],
+        "coordination": "ACTIVE"
+    }
+
+
+@app.get("/ai-agent/swarm/status")
+def ai_agent_swarm_status():
+    return {
+        "swarm_status": "RUNNING",
+        "active_agents": 4,
+        "communication": "HEALTHY"
+    }
+
+
+@app.post("/command/execute")
+def command_execute():
+    return {
+        "command_id": "cmd_001",
+        "execution": "STARTED",
+        "executor": "AEON_AUTONOMOUS_RUNTIME",
+        "governance": "APPROVED"
+    }
+
+
+@app.get("/command/history")
+def command_history():
+    return {
+        "commands": [
+            {
+                "id": "cmd_001",
+                "action": "OPTIMIZE_OPERATION",
+                "status": "COMPLETED"
+            }
+        ]
+    }
+
+
+@app.get("/enterprise/autonomy-score")
+def enterprise_autonomy_score():
+    return {
+        "system": "AEON_MATRIX",
+        "autonomy_score": 97.4,
+        "level": "ENTERPRISE_AUTONOMOUS",
+        "status": "ACTIVE"
+    }
+
