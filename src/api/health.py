@@ -356,3 +356,96 @@ def kpi_dashboard():
             "risk_score": 12
         }
     }
+
+
+@app.post("/brain/analyze")
+def brain_analyze():
+    return {
+        "brain": "MOTHER_BRAIN",
+        "process": "ANALYZE",
+        "signals": [
+            "inventory",
+            "demand",
+            "risk",
+            "operations"
+        ],
+        "status": "READY"
+    }
+
+
+@app.post("/brain/recommend")
+def brain_recommend():
+    return {
+        "brain": "MOTHER_BRAIN",
+        "recommendation": {
+            "action": "OPTIMIZE_INVENTORY",
+            "confidence": 0.95
+        },
+        "status": "READY"
+    }
+
+
+@app.post("/brain/optimize")
+def brain_optimize():
+    return {
+        "brain": "MOTHER_BRAIN",
+        "optimization": {
+            "target": "OPERATIONS",
+            "result": "IMPROVED"
+        },
+        "status": "EXECUTED"
+    }
+
+
+@app.get("/brain/state")
+def brain_state():
+    return {
+        "brain": "MOTHER_BRAIN",
+        "state": {
+            "observe": "ACTIVE",
+            "reason": "ACTIVE",
+            "predict": "ACTIVE",
+            "decide": "ACTIVE",
+            "learn": "ACTIVE"
+        },
+        "status": "ONLINE"
+    }
+
+
+@app.get("/brain/learning")
+def brain_learning():
+    return {
+        "learning": {
+            "patterns_detected": 128,
+            "models_updated": 4,
+            "continuous_learning": True
+        },
+        "status": "ACTIVE"
+    }
+
+
+@app.get("/simulation/run")
+def simulation_run():
+    return {
+        "simulation": "STARTED",
+        "scenario": "warehouse_optimization",
+        "result": {
+            "inventory_balance": "OPTIMIZED",
+            "risk": "REDUCED"
+        }
+    }
+
+
+@app.get("/digital-twin/simulation")
+def digital_twin_simulation():
+    return {
+        "digital_twin": "SIMULATION_MODE",
+        "entities": [
+            "warehouse",
+            "inventory",
+            "fleet",
+            "orders"
+        ],
+        "confidence": 0.97,
+        "status": "READY"
+    }
