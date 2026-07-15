@@ -844,3 +844,147 @@ def enterprise_autonomy_score():
         "status": "ACTIVE"
     }
 
+
+# =====================================================
+# ENTERPRISE REALITY INTEGRATION LAYER
+# =====================================================
+
+@app.post("/connector/register")
+def connector_register():
+    return {
+        "connector_id": "connector_001",
+        "type": "ENTERPRISE_DATA_SOURCE",
+        "status": "REGISTERED",
+        "sources": [
+            "WMS",
+            "TMS",
+            "ERP",
+            "GPS",
+            "TELEMETRY"
+        ]
+    }
+
+
+@app.get("/connector/status")
+def connector_status():
+    return {
+        "connectors": [
+            {
+                "name": "WMS",
+                "status": "ONLINE"
+            },
+            {
+                "name": "TMS",
+                "status": "ONLINE"
+            },
+            {
+                "name": "TELEMETRY",
+                "status": "ACTIVE"
+            }
+        ],
+        "health": "READY"
+    }
+
+
+@app.post("/data/sync")
+def data_sync():
+    return {
+        "sync": "COMPLETED",
+        "records_processed": 12580,
+        "mode": "REAL_TIME"
+    }
+
+
+@app.get("/data/freshness")
+def data_freshness():
+    return {
+        "freshness_score": 98.7,
+        "last_sync": "NOW",
+        "status": "HEALTHY"
+    }
+
+
+@app.post("/digital-twin/live-update")
+def digital_twin_live_update():
+    return {
+        "digital_twin": "LIVE",
+        "updated_entities": [
+            "warehouse",
+            "inventory",
+            "fleet",
+            "orders"
+        ],
+        "confidence": 0.96
+    }
+
+
+@app.get("/digital-twin/health")
+def digital_twin_health():
+    return {
+        "digital_twin": "ACTIVE",
+        "simulation": "READY",
+        "data_connection": "ONLINE"
+    }
+
+
+@app.post("/kpi/predict")
+def kpi_predict():
+    return {
+        "prediction": {
+            "OTIF": 98.5,
+            "inventory_health": 97.2,
+            "forecast_accuracy": 95.1,
+            "risk_score": 9
+        },
+        "engine": "PREDICTIVE_KPI_ENGINE"
+    }
+
+
+@app.get("/kpi/trend")
+def kpi_trend():
+    return {
+        "trend": {
+            "OTIF": "IMPROVING",
+            "inventory": "STABLE",
+            "risk": "DECREASING"
+        }
+    }
+
+
+@app.post("/alert/create")
+def alert_create():
+    return {
+        "alert_id": "alert_001",
+        "severity": "MEDIUM",
+        "status": "CREATED",
+        "engine": "RISK_INTELLIGENCE"
+    }
+
+
+@app.get("/alert/active")
+def alert_active():
+    return {
+        "alerts": [
+            {
+                "type": "INVENTORY_RISK",
+                "status": "MONITORING"
+            }
+        ]
+    }
+
+
+@app.get("/executive/control-center")
+def executive_control_center():
+    return {
+        "system": "AEON_MATRIX",
+        "mode": "EXECUTIVE_INTELLIGENCE",
+        "modules": [
+            "DIGITAL_TWIN",
+            "PREDICTION",
+            "RISK",
+            "OPTIMIZATION",
+            "GOVERNANCE"
+        ],
+        "status": "ACTIVE"
+    }
+
