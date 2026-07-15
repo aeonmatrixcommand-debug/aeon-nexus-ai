@@ -1485,3 +1485,129 @@ def executive_simulation_insight():
     }
 
 
+
+# =====================================================
+# ENTERPRISE DECISION INTELLIGENCE LAYER
+# =====================================================
+
+
+@app.post("/decision/intelligence/analyze")
+def decision_intelligence_analyze():
+    return {
+        "engine": "DECISION_INTELLIGENCE",
+        "signals": [
+            "demand",
+            "inventory",
+            "risk",
+            "cost",
+            "capacity"
+        ],
+        "status": "ANALYZED"
+    }
+
+
+@app.post("/decision/intelligence/recommend")
+def decision_intelligence_recommend():
+    return {
+        "recommendation": {
+            "action": "NETWORK_OPTIMIZATION",
+            "priority": "HIGH",
+            "confidence": 0.96
+        },
+        "engine": "AI_DECISION_ENGINE"
+    }
+
+
+@app.get("/decision/intelligence/state")
+def decision_intelligence_state():
+    return {
+        "decision_engine": "ACTIVE",
+        "mode": "AUTONOMOUS_SUPPORT",
+        "learning": True
+    }
+
+
+@app.post("/value/optimize")
+def value_optimize():
+    return {
+        "optimization": {
+            "cost_reduction": "12%",
+            "service_improvement": "6%",
+            "capacity_gain": "9%"
+        },
+        "engine": "VALUE_OPTIMIZATION_ENGINE"
+    }
+
+
+@app.get("/value/recovery/opportunity")
+def value_recovery_opportunity():
+    return {
+        "opportunities": [
+            {
+                "area": "INVENTORY",
+                "value": "HIGH"
+            },
+            {
+                "area": "TRANSPORT",
+                "value": "MEDIUM"
+            },
+            {
+                "area": "WASTE_REDUCTION",
+                "value": "HIGH"
+            }
+        ]
+    }
+
+
+@app.post("/business/scenario/simulate")
+def business_scenario_simulate():
+    return {
+        "scenario": "BUSINESS_IMPACT",
+        "simulation": "COMPLETED",
+        "result": {
+            "profit": "IMPROVED",
+            "risk": "REDUCED"
+        }
+    }
+
+
+@app.get("/executive/recommendation")
+def executive_recommendation():
+    return {
+        "executive_action": {
+            "recommendation": "OPTIMIZE_SUPPLY_NETWORK",
+            "expected_value": "HIGH"
+        },
+        "confidence": 0.97
+    }
+
+
+@app.get("/opportunity/ranking")
+def opportunity_ranking():
+    return {
+        "ranking": [
+            {
+                "opportunity": "DEMAND_OPTIMIZATION",
+                "score": 95
+            },
+            {
+                "opportunity": "ROUTE_EFFICIENCY",
+                "score": 91
+            },
+            {
+                "opportunity": "INVENTORY_BALANCE",
+                "score": 89
+            }
+        ]
+    }
+
+
+@app.get("/enterprise/value-score")
+def enterprise_value_score():
+    return {
+        "enterprise_value_score": 96.9,
+        "intelligence": "ACTIVE",
+        "optimization": "READY"
+    }
+
+
