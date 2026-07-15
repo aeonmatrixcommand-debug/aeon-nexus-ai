@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .coverage
+
+*.backup
+*.before_execution_fabric
+*.before_mother_brain
+*.runtime_backup
