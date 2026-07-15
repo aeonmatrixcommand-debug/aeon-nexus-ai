@@ -645,3 +645,105 @@ def intelligence_score():
         "intelligence_score": 96.8,
         "status": "ACTIVE"
     }
+
+
+@app.post("/strategy/analyze")
+def strategy_analyze():
+    return {
+        "strategy_engine": "ACTIVE",
+        "analysis": {
+            "market_signal": "POSITIVE",
+            "operational_strength": "HIGH",
+            "growth_opportunity": "IDENTIFIED"
+        },
+        "confidence": 0.92
+    }
+
+
+@app.post("/opportunity/detect")
+def opportunity_detect():
+    return {
+        "opportunity_engine": "WORLD_SIGNAL_INTELLIGENCE",
+        "opportunities": [
+            {
+                "type": "LOGISTICS_EXPANSION",
+                "impact": "HIGH"
+            },
+            {
+                "type": "SUPPLY_CHAIN_OPTIMIZATION",
+                "impact": "MEDIUM"
+            }
+        ],
+        "status": "DETECTED"
+    }
+
+
+@app.get("/world-signal/status")
+def world_signal_status():
+    return {
+        "world_signal_intelligence": "ACTIVE",
+        "signals_monitored": [
+            "economy",
+            "market",
+            "logistics",
+            "demand",
+            "risk"
+        ],
+        "status": "CONNECTED"
+    }
+
+
+@app.get("/risk/prediction")
+def risk_prediction():
+    return {
+        "risk_engine": "ACTIVE",
+        "prediction": {
+            "supply_chain_risk": 12,
+            "transport_risk": 8,
+            "inventory_risk": 10
+        },
+        "confidence": 0.91
+    }
+
+
+@app.post("/scenario/simulate")
+def scenario_simulate():
+    return {
+        "simulation": "COMPLETED",
+        "scenario": "BUSINESS_GROWTH_OPTIMIZATION",
+        "result": {
+            "revenue_impact": "POSITIVE",
+            "cost_reduction": "PREDICTED"
+        }
+    }
+
+
+@app.get("/executive/insight")
+def executive_insight():
+    return {
+        "executive_intelligence": "ACTIVE",
+        "insights": [
+            "inventory_efficiency_improved",
+            "operational_risk_reduced",
+            "growth_signal_detected"
+        ],
+        "priority": "STRATEGIC_ACTION"
+    }
+
+
+@app.get("/decision/recommendations")
+def decision_recommendations():
+    return {
+        "decision_engine": "ACTIVE",
+        "recommendations": [
+            {
+                "action": "OPTIMIZE_NETWORK",
+                "confidence": 0.94
+            },
+            {
+                "action": "ADJUST_RESOURCE_ALLOCATION",
+                "confidence": 0.89
+            }
+        ]
+    }
+
