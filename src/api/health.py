@@ -1153,3 +1153,96 @@ def command_center_kpi():
         }
     }
 
+
+# =====================================================
+# AUTONOMOUS OPERATIONS CONTROL LOOP LAYER
+# =====================================================
+
+
+@app.post("/control/action")
+def control_action():
+    return {
+        "control_id": "control_001",
+        "action": "OPTIMIZE_OPERATION",
+        "status": "PLANNED",
+        "executor": "AUTONOMOUS_RUNTIME"
+    }
+
+
+@app.post("/decision/execute")
+def decision_execute():
+    return {
+        "decision_id": "decision_001",
+        "execution": "STARTED",
+        "mode": "AUTONOMOUS",
+        "governance": "CHECKED"
+    }
+
+
+@app.get("/decision/result/{decision_id}")
+def decision_result(decision_id: str):
+    return {
+        "decision_id": decision_id,
+        "result": "SUCCESS",
+        "impact": {
+            "cost": "REDUCED",
+            "service": "IMPROVED",
+            "risk": "LOW"
+        }
+    }
+
+
+@app.post("/feedback/collect")
+def feedback_collect():
+    return {
+        "feedback_id": "feedback_001",
+        "source": "OPERATION_RESULT",
+        "status": "COLLECTED"
+    }
+
+
+@app.get("/learning/feedback-loop")
+def learning_feedback_loop():
+    return {
+        "learning_loop": "ACTIVE",
+        "patterns_updated": 42,
+        "models_improved": 3,
+        "continuous_learning": True
+    }
+
+
+@app.get("/autonomy/control-state")
+def autonomy_control_state():
+    return {
+        "autonomy": "ACTIVE",
+        "level": "ENTERPRISE_AUTONOMOUS",
+        "capabilities": [
+            "DECISION",
+            "EXECUTION",
+            "VERIFICATION",
+            "LEARNING"
+        ]
+    }
+
+
+@app.post("/governance/approval")
+def governance_approval():
+    return {
+        "approval_id": "approval_001",
+        "policy": "AUTONOMOUS_ACTION_POLICY",
+        "status": "APPROVED"
+    }
+
+
+@app.get("/runtime/execution-state")
+def runtime_execution_state():
+    return {
+        "runtime": "AUTONOMOUS_EXECUTION",
+        "state": "RUNNING",
+        "workers": [
+            "inventory_agent",
+            "route_agent",
+            "forecast_agent"
+        ]
+    }
+
