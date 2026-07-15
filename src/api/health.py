@@ -15,10 +15,25 @@ SERVICES = [
     "mcp",
 ]
 
+runtime_metrics = {
+    "requests": 0,
+    "agents": 0,
+    "events": 0,
+}
+
+
 @app.on_event("startup")
 def startup():
     for service in SERVICES:
         registry.register(service, object())
+
+
+@app.middleware("http")
+async def count_requests(request, call_next):
+    runtime_metrics["requests"] += 1
+    response = await call_next(request)
+    return response
+
 
 @app.get("/health")
 def health():
@@ -27,39 +42,43 @@ def health():
         "services": registry.status()
     }
 
+
 @app.get("/ready")
 def ready():
-    return {"ready": True}
+    return {
+        "ready": True,
+        "status": "READY"
+    }
+
 
 @app.get("/version")
 def version():
     return {
         "platform": "AEON MATRIX",
-        "runtime": "Integration Sprint"
+        "runtime": "Integration Sprint",
+        "version": "1.0.0"
     }
+
 
 @app.get("/runtime")
 def runtime():
-    services = registry.status()
     return {
         "platform": "AEON MATRIX",
-        "runtime": {
-            "mode": "AUTONOMOUS",
-            "services": len(services),
-            "status": "READY"
-        },
-        "services": services
+        "runtime": "ACTIVE",
+        "components": [
+            "AI Gateway",
+            "MCP",
+            "Digital Twin",
+            "Telemetry",
+            "Multi-Agent Runtime"
+        ],
+        "services": registry.status()
     }
 
 
 @app.get("/metrics")
 def metrics():
-    services = registry.status()
     return {
-        "platform": "AEON MATRIX",
-        "metrics": {
-            "service_count": len(services),
-            "health_score": 100 if services else 0,
-            "status": "READY"
-        }
+        "metrics": runtime_metrics,
+        "status": "READY"
     }
