@@ -1,0 +1,180 @@
+src
+├── __init__.py
+├── __pycache__
+│   └── __init__.cpython-313.pyc
+├── adaptive_intelligence
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── adaptive_runtime.py
+│   ├── behavior_optimizer.py
+│   └── confidence_calibrator.py
+├── agent_marketplace
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── agent_bus.py
+│   ├── agent_registry.py
+│   ├── discovery_engine.py
+│   └── runtime.py
+├── ai_gateway
+│   ├── __pycache__
+│   ├── context_manager.py
+│   ├── gateway.py
+│   ├── model_registry.py
+│   ├── prompt_orchestrator.py
+│   └── provider_router.py
+├── api
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── contracts.py
+│   ├── decision_service.py
+│   └── enterprise_gateway.py
+├── autonomy
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── agent_runtime.py
+│   ├── decision_controller.py
+│   ├── execution_engine.py
+│   ├── execution_pipeline.py
+│   └── feedback_loop.py
+├── causal_intelligence
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── causal_graph.py
+│   ├── causal_runtime.py
+│   ├── prevention_engine.py
+│   └── root_cause_engine.py
+├── copilot
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── copilot_runtime.py
+│   └── intent_engine.py
+├── customer_gateway
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── customer_ai_gateway.py
+│   └── tenant_context.py
+├── digital_twin
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── adaptive
+│   ├── adaptive_dashboard
+│   ├── agents
+│   ├── autonomy
+│   ├── business
+│   ├── causal
+│   ├── cognition
+│   ├── communication
+│   ├── dashboard
+│   ├── decision
+│   ├── engine
+│   ├── executive
+│   ├── explainability
+│   ├── explanation
+│   ├── governance
+│   ├── impact
+│   ├── knowledge
+│   ├── learning
+│   ├── memory
+│   ├── models
+│   ├── opportunity
+│   ├── prediction
+│   ├── reasoning
+│   ├── runtime
+│   ├── simulation
+│   ├── strategic
+│   ├── sustainability
+│   ├── value
+│   ├── world_model
+│   └── world_signal
+├── enterprise_memory
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── decision_memory.py
+│   ├── event_store.py
+│   └── pattern_analyzer.py
+├── enterprise_os
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── mother_brain.py
+│   └── runtime.py
+├── execution_fabric
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── autonomous_runtime.py
+│   ├── execution_controller.py
+│   └── verification_engine.py
+├── executive
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── executive_api.py
+│   └── kpi_engine.py
+├── governance
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── approval_workflow.py
+│   ├── audit_trail.py
+│   ├── control_plane.py
+│   ├── explainability.py
+│   └── policy_engine.py
+├── mcp
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── registry.py
+│   ├── server.py
+│   └── tools
+├── multi_agent
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── agent_registry.py
+│   ├── agent_runtime.py
+│   ├── communication.py
+│   ├── consensus_engine.py
+│   └── specialist_agents.py
+├── observability
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── agent_trace.py
+│   ├── decision_timeline.py
+│   ├── health_monitor.py
+│   ├── metrics_collector.py
+│   └── operations_center.py
+├── runtime
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── causal
+│   ├── cognition
+│   ├── control_plane
+│   ├── knowledge
+│   ├── learning
+│   ├── memory
+│   ├── system_orchestrator.py
+│   └── telemetry_fusion
+├── simulation_engine
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── impact_predictor.py
+│   ├── scenario_builder.py
+│   ├── simulation_runtime.py
+│   └── what_if_engine.py
+├── strategic_intelligence
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── opportunity_radar.py
+│   ├── signal_collector.py
+│   └── strategic_runtime.py
+├── telemetry
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── agent_trace.py
+│   ├── audit_logger.py
+│   ├── event_bus.py
+│   └── metric_collector.py
+└── world_intelligence
+    ├── __init__.py
+    ├── __pycache__
+    ├── external_signal.py
+    ├── market_signal.py
+    ├── opportunity_detector.py
+    └── strategic_radar.py
+
+84 directories, 94 files
