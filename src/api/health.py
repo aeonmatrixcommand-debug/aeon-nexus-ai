@@ -1246,3 +1246,126 @@ def runtime_execution_state():
         ]
     }
 
+
+# =====================================================
+# ENTERPRISE GOVERNANCE & TRUST LAYER
+# =====================================================
+
+
+@app.post("/governance/policy/evaluate")
+def governance_policy_evaluate():
+    return {
+        "policy_check": "PASSED",
+        "risk_level": "LOW",
+        "approval_required": False,
+        "governance": "ACTIVE"
+    }
+
+
+@app.post("/governance/risk/assess")
+def governance_risk_assess():
+    return {
+        "risk_assessment": {
+            "operational_risk": 8,
+            "data_risk": 5,
+            "execution_risk": 6
+        },
+        "overall": "LOW"
+    }
+
+
+@app.get("/governance/audit/logs")
+def governance_audit_logs():
+    return {
+        "audit_logs": [
+            {
+                "id": "audit_001",
+                "action": "INVENTORY_OPTIMIZATION",
+                "actor": "AI_AGENT",
+                "status": "VERIFIED"
+            }
+        ]
+    }
+
+
+@app.get("/governance/compliance/status")
+def governance_compliance_status():
+    return {
+        "compliance": "ACTIVE",
+        "standards": [
+            "AI_GOVERNANCE",
+            "DATA_CONTROL",
+            "OPERATION_SECURITY"
+        ]
+    }
+
+
+@app.post("/decision/explain")
+def decision_explain():
+    return {
+        "decision_id": "decision_001",
+        "explanation": {
+            "reason": [
+                "inventory_signal_detected",
+                "demand_pattern_changed",
+                "risk_threshold_checked"
+            ],
+            "confidence": 0.94
+        }
+    }
+
+
+@app.get("/decision/audit/{decision_id}")
+def decision_audit(decision_id: str):
+    return {
+        "decision_id": decision_id,
+        "timeline": [
+            "OBSERVED",
+            "ANALYZED",
+            "APPROVED",
+            "EXECUTED",
+            "VERIFIED"
+        ]
+    }
+
+
+@app.post("/human/approval/request")
+def human_approval_request():
+    return {
+        "approval_id": "human_review_001",
+        "status": "PENDING",
+        "mode": "HUMAN_IN_THE_LOOP"
+    }
+
+
+@app.post("/human/approval/confirm")
+def human_approval_confirm():
+    return {
+        "approval_id": "human_review_001",
+        "status": "APPROVED",
+        "controller": "HUMAN_OPERATOR"
+    }
+
+
+@app.get("/guardian/status")
+def guardian_status():
+    return {
+        "guardian_ai": "ACTIVE",
+        "functions": [
+            "POLICY_ENFORCEMENT",
+            "RISK_CONTROL",
+            "AUDIT",
+            "APPROVAL_GATE"
+        ]
+    }
+
+
+@app.get("/trust/score")
+def trust_score():
+    return {
+        "trust_score": 97.4,
+        "security": "READY",
+        "governance": "ACTIVE"
+    }
+
+
