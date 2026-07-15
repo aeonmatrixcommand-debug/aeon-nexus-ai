@@ -185,3 +185,67 @@ def get_decisions():
     return {
         "decisions": decisions
     }
+
+
+@app.get("/decisions/history")
+def decisions_history():
+    return {
+        "decisions": [
+            {
+                "id": "decision_001",
+                "agent": "inventory_agent",
+                "decision": "predict_stockout",
+                "action": "RECOMMEND_REPLENISHMENT",
+                "status": "COMPLETED"
+            }
+        ]
+    }
+
+
+@app.get("/telemetry")
+def telemetry():
+    return {
+        "status": "ACTIVE",
+        "events": 1,
+        "agents": 3,
+        "runtime": "AEON MATRIX TELEMETRY"
+    }
+
+
+@app.get("/governance/audit")
+def governance_audit():
+    return {
+        "audit": [
+            {
+                "policy": "NO_SCAN_NO_MOVE",
+                "status": "ENFORCED"
+            },
+            {
+                "policy": "HUMAN_APPROVAL_REQUIRED",
+                "status": "ACTIVE"
+            }
+        ]
+    }
+
+
+@app.post("/mcp/tools/{tool}/execute")
+def execute_mcp_tool(tool: str):
+    return {
+        "tool": tool,
+        "status": "EXECUTED",
+        "runtime": "MCP",
+        "result": "READY"
+    }
+
+
+@app.get("/digital-twin/state")
+def digital_twin_state():
+    return {
+        "digital_twin": {
+            "warehouse": "DC01",
+            "inventory": "SYNCED",
+            "fleet": "ONLINE",
+            "confidence": 0.96
+        },
+        "status": "READY"
+    }
