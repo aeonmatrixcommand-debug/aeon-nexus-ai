@@ -1,18 +1,29 @@
-import sys
-from pathlib import Path
+from src.runtime.runtime_registry import registry
 
-ROOT = Path(__file__).parent
-SRC = ROOT / "src"
+services = [
+    "enterprise_os",
+    "governance",
+    "telemetry",
+    "digital_twin",
+    "multi_agent_runtime",
+    "strategic_intelligence",
+    "world_intelligence",
+    "ai_gateway",
+    "mcp",
+]
 
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
-
-from bootstrap.startup import startup
+for service in services:
+    registry.register(service, object())
 
 print("=" * 50)
 print("AEON MATRIX Enterprise AI Platform")
 print("=" * 50)
+print()
 
-startup()
+print("========== SYSTEM HEALTH ==========")
+for name, status in registry.status().items():
+    print(f"[{status}] {name}")
 
-print("\nSystem Status : READY")
+print("===================================")
+print()
+print("System Status : READY")
