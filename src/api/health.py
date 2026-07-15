@@ -1,53 +1,43 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from datetime import datetime
 from src.runtime.runtime_registry import registry
 
 app = FastAPI(title="AEON MATRIX Runtime API")
 
-SERVICES = [
-    "enterprise_os",
-    "governance",
-    "telemetry",
-    "digital_twin",
-    "multi_agent_runtime",
-    "strategic_intelligence",
-    "world_intelligence",
-    "ai_gateway",
-    "mcp",
-]
+events = []
+decisions = []
 
-agents = [
-    {
-        "name": "inventory_agent",
+agents = {
+    "inventory_agent": {
         "status": "READY",
         "role": "Inventory Intelligence"
     },
-    {
-        "name": "route_agent",
+    "route_agent": {
         "status": "READY",
         "role": "Route Optimization"
     },
-    {
-        "name": "forecast_agent",
+    "forecast_agent": {
         "status": "READY",
         "role": "Demand Forecast"
-    },
-]
-
-events = []
-
-decisions = []
+    }
+}
 
 
-class CommandRequest(BaseModel):
+class Command(BaseModel):
     command: str
-    target: str
+    target: str | None = None
 
 
-@app.on_event("startup")
-def startup():
-    for service in SERVICES:
-        registry.register(service, object())
+class Event(BaseModel):
+    event: str
+    source: str
+    payload: dict = {}
+
+
+class AgentTask(BaseModel):
+    task: str
+    input: dict = {}
 
 
 @app.get("/health")
@@ -80,6 +70,13 @@ def runtime():
     return {
         "platform": "AEON MATRIX",
         "runtime": "ACTIVE",
+        "components": [
+            "AI Gateway",
+            "MCP",
+            "Digital Twin",
+            "Telemetry",
+            "Multi-Agent Runtime"
+        ],
         "services": registry.status()
     }
 
@@ -87,9 +84,11 @@ def runtime():
 @app.get("/metrics")
 def metrics():
     return {
-        "requests": 0,
-        "agents": len(agents),
-        "events": len(events),
+        "metrics": {
+            "requests": len(events),
+            "agents": len(agents),
+            "events": len(events)
+        },
         "status": "READY"
     }
 
@@ -97,7 +96,54 @@ def metrics():
 @app.get("/agents")
 def get_agents():
     return {
-        "agents": agents
+        "agents": [
+            {
+                "name": name,
+                **data
+            }
+            for name, data in agents.items()
+        ]
+    }
+
+
+@app.post("/agents/{agent}/execute")
+def execute_agent(agent: str, task: AgentTask):
+
+    if agent not in agents:
+        return {
+            "status": "ERROR",
+            "message": "Agent not found"
+        }
+
+    decision = {
+        "agent": agent,
+        "task": task.task,
+        "decision": "ANALYZE",
+        "confidence": 0.94,
+        "action": "EXECUTE",
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+    decisions.append(decision)
+
+    return decision
+
+
+@app.post("/events/publish")
+def publish_event(event: Event):
+
+    record = {
+        "event": event.event,
+        "source": event.source,
+        "payload": event.payload,
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+    events.append(record)
+
+    return {
+        "status": "ACCEPTED",
+        "event": record
     }
 
 
@@ -108,23 +154,30 @@ def get_events():
     }
 
 
-@app.post("/command")
-def command(request: CommandRequest):
-    event = {
-        "command": request.command,
-        "target": request.target,
-        "status": "ACCEPTED"
+@app.get("/events/stream")
+def event_stream():
+    return {
+        "stream": "ACTIVE",
+        "events": events
     }
 
-    events.append(event)
 
-    decisions.append({
-        "decision": request.command,
+@app.post("/command")
+def command(cmd: Command):
+
+    decision = {
+        "decision": cmd.command,
         "action": "ANALYZE",
         "status": "READY"
-    })
+    }
 
-    return event
+    decisions.append(decision)
+
+    return {
+        "command": cmd.command,
+        "target": cmd.target,
+        "status": "ACCEPTED"
+    }
 
 
 @app.get("/decisions")
