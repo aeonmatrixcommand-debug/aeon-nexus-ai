@@ -988,3 +988,168 @@ def executive_control_center():
         "status": "ACTIVE"
     }
 
+
+# =====================================================
+# OPERATIONAL INTELLIGENCE ACTIVATION LAYER
+# =====================================================
+
+@app.post("/events/ingest")
+def events_ingest():
+    return {
+        "event_id": "event_001",
+        "type": "OPERATIONAL_SIGNAL",
+        "status": "RECEIVED"
+    }
+
+
+@app.get("/events/live")
+def events_live():
+    return {
+        "stream": "ACTIVE",
+        "events": [
+            "inventory_update",
+            "shipment_status",
+            "warehouse_activity"
+        ]
+    }
+
+
+@app.get("/events/history")
+def events_history():
+    return {
+        "events": [
+            {
+                "id": "event_001",
+                "status": "PROCESSED"
+            }
+        ]
+    }
+
+
+@app.get("/operations/status")
+def operations_status():
+    return {
+        "operations": "ACTIVE",
+        "mode": "REAL_TIME_CONTROL"
+    }
+
+
+@app.get("/operations/health")
+def operations_health():
+    return {
+        "system": "OPERATIONAL_INTELLIGENCE",
+        "health": "READY"
+    }
+
+
+@app.post("/operations/analyze")
+def operations_analyze():
+    return {
+        "analysis": {
+            "inventory": "STABLE",
+            "transport": "OPTIMIZED",
+            "risk": "LOW"
+        }
+    }
+
+
+@app.post("/sla/check")
+def sla_check():
+    return {
+        "sla": {
+            "compliance": 98.6,
+            "status": "PASS"
+        }
+    }
+
+
+@app.get("/sla/dashboard")
+def sla_dashboard():
+    return {
+        "OTIF": 98.5,
+        "SLA": 99.1
+    }
+
+
+@app.post("/eta/predict")
+def eta_predict():
+    return {
+        "eta_prediction": {
+            "arrival": "ON_TIME",
+            "confidence": 0.96
+        }
+    }
+
+
+@app.post("/route/analyze")
+def route_analyze():
+    return {
+        "route": "OPTIMIZED",
+        "fuel_saving": 12.5
+    }
+
+
+@app.get("/route/status")
+def route_status():
+    return {
+        "routes": "MONITORING"
+    }
+
+
+@app.post("/warehouse/scan/verify")
+def warehouse_scan_verify():
+    return {
+        "scan": "VERIFIED",
+        "control": "NO_SCAN_NO_MOVE"
+    }
+
+
+@app.get("/warehouse/activity")
+def warehouse_activity():
+    return {
+        "warehouse": "ACTIVE",
+        "activities": [
+            "receiving",
+            "picking",
+            "shipping"
+        ]
+    }
+
+
+@app.post("/copilot/query")
+def copilot_query():
+    return {
+        "copilot": "ACTIVE",
+        "answer": "OPERATIONAL_INSIGHT_READY"
+    }
+
+
+@app.get("/copilot/context")
+def copilot_context():
+    return {
+        "context": [
+            "inventory",
+            "transport",
+            "orders"
+        ]
+    }
+
+
+@app.get("/command-center/live")
+def command_center_live():
+    return {
+        "command_center": "LIVE",
+        "status": "ACTIVE"
+    }
+
+
+@app.get("/command-center/kpi")
+def command_center_kpi():
+    return {
+        "kpi": {
+            "OTIF": 98.5,
+            "risk_score": 8,
+            "productivity": 96.2
+        }
+    }
+
