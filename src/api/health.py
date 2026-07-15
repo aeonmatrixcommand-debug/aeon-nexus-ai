@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 from src.runtime.runtime_registry import registry
 
 app = FastAPI(title="AEON MATRIX Runtime API")
@@ -15,24 +16,38 @@ SERVICES = [
     "mcp",
 ]
 
-runtime_metrics = {
-    "requests": 0,
-    "agents": 0,
-    "events": 0,
-}
+agents = [
+    {
+        "name": "inventory_agent",
+        "status": "READY",
+        "role": "Inventory Intelligence"
+    },
+    {
+        "name": "route_agent",
+        "status": "READY",
+        "role": "Route Optimization"
+    },
+    {
+        "name": "forecast_agent",
+        "status": "READY",
+        "role": "Demand Forecast"
+    },
+]
+
+events = []
+
+decisions = []
+
+
+class CommandRequest(BaseModel):
+    command: str
+    target: str
 
 
 @app.on_event("startup")
 def startup():
     for service in SERVICES:
         registry.register(service, object())
-
-
-@app.middleware("http")
-async def count_requests(request, call_next):
-    runtime_metrics["requests"] += 1
-    response = await call_next(request)
-    return response
 
 
 @app.get("/health")
@@ -65,13 +80,6 @@ def runtime():
     return {
         "platform": "AEON MATRIX",
         "runtime": "ACTIVE",
-        "components": [
-            "AI Gateway",
-            "MCP",
-            "Digital Twin",
-            "Telemetry",
-            "Multi-Agent Runtime"
-        ],
         "services": registry.status()
     }
 
@@ -79,6 +87,48 @@ def runtime():
 @app.get("/metrics")
 def metrics():
     return {
-        "metrics": runtime_metrics,
+        "requests": 0,
+        "agents": len(agents),
+        "events": len(events),
         "status": "READY"
+    }
+
+
+@app.get("/agents")
+def get_agents():
+    return {
+        "agents": agents
+    }
+
+
+@app.get("/events")
+def get_events():
+    return {
+        "events": events
+    }
+
+
+@app.post("/command")
+def command(request: CommandRequest):
+    event = {
+        "command": request.command,
+        "target": request.target,
+        "status": "ACCEPTED"
+    }
+
+    events.append(event)
+
+    decisions.append({
+        "decision": request.command,
+        "action": "ANALYZE",
+        "status": "READY"
+    })
+
+    return event
+
+
+@app.get("/decisions")
+def get_decisions():
+    return {
+        "decisions": decisions
     }
