@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import os
 from google import genai
 from google.genai.errors import ClientError
@@ -30,11 +31,15 @@ def generate(prompt: str) -> str:
 
         raise
 =======
+=======
+import os
+
+>>>>>>> 072e626 (fix: add Gemini quota fallback and runtime resilience)
 from google import genai
-from ai.config import API_KEY
+from google.genai.errors import ClientError
 
-client = genai.Client(api_key=API_KEY)
 
+<<<<<<< HEAD
 def generate(prompt, model="gemini-3.5-flash"):
     response = client.models.generate_content(
         model=model,
@@ -42,3 +47,26 @@ def generate(prompt, model="gemini-3.5-flash"):
     )
     return response.text
 >>>>>>> 60b4512 (chore: baseline verified before sprint 78 (169 tests passed))
+=======
+def generate(prompt: str) -> str:
+    if os.getenv("RUN_LIVE_TESTS") != "1":
+        return "AI Runtime Ready (Mock)"
+
+    try:
+        client = genai.Client(
+            api_key=os.getenv("GEMINI_API_KEY")
+        )
+
+        response = client.models.generate_content(
+            model="gemini-3.5-flash",
+            contents=prompt
+        )
+
+        return response.text
+
+    except ClientError as e:
+        if "429" in str(e):
+            return "Gemini quota exhausted - fallback runtime active"
+
+        raise
+>>>>>>> 072e626 (fix: add Gemini quota fallback and runtime resilience)
