@@ -9,3 +9,4 @@ __pycache__/
 *.before_execution_fabric
 *.before_mother_brain
 *.runtime_backup
+.env.local
