@@ -14,5 +14,9 @@ def test_ai_runtime_mock():
     reason="Live Gemini API test disabled"
 )
 def test_ai_runtime_live():
-    response = run("ตอบเพียงคำว่า AI Runtime Ready")
+
+    response = run(
+        "ตอบเพียงคำว่า AI Runtime Ready"
+    )
+
     assert response
