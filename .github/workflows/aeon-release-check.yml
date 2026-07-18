@@ -1,0 +1,17 @@
+name: AEON MATRIX Release Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python Validation
+        run: |
+          python3 test_release_gate.py
