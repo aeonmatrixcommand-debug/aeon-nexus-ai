@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import pytest
 
@@ -15,14 +14,5 @@ def test_ai_runtime_mock():
     reason="Live Gemini API test disabled"
 )
 def test_ai_runtime_live():
-
-    response = run(
-        "ตอบเพียงคำว่า AI Runtime Ready"
-    )
-
+    response = run("ตอบเพียงคำว่า AI Runtime Ready")
     assert response
-=======
-from ai.orchestrator import run
-
-print(run("ตอบเพียงคำว่า AI Runtime Ready"))
->>>>>>> 60b4512 (chore: baseline verified before sprint 78 (169 tests passed))
