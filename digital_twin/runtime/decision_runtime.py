@@ -11,6 +11,9 @@ class DecisionRuntime:
                 "recommendation": {
                     "action": "move_to_backup_storage"
                 },
-                "status": self.status
+                "status": self.status,
+                "confidence": {
+                    "confidence": 0.95
+                }
             }
         )
