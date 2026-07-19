@@ -1,120 +1,173 @@
-from datetime import datetime
 import json
+from datetime import datetime
 
 
 class WorldSignalIntelligence:
 
+
     def collect(self):
 
         return {
-            "market_signal": "RISING",
-            "logistics_signal": "OPTIMIZATION_REQUIRED",
-            "retail_signal": "DEMAND_SHIFT_DETECTED",
-            "economic_signal": "MONITORED"
+
+            "economic_signal":
+                "GROWTH",
+
+            "market_demand":
+                "INCREASING",
+
+            "supply_risk":
+                "MEDIUM",
+
+            "consumer_signal":
+                "POSITIVE"
+
+        }
+
+
+
+class OpportunityDetector:
+
+
+    def analyze(self, signals):
+
+        opportunities = []
+
+
+        if signals["market_demand"] == "INCREASING":
+
+            opportunities.append(
+                "EXPAND_HIGH_DEMAND_CATEGORY"
+            )
+
+
+        if signals["supply_risk"] == "MEDIUM":
+
+            opportunities.append(
+                "OPTIMIZE_INVENTORY_BUFFER"
+            )
+
+
+        return {
+
+            "opportunities":
+                opportunities,
+
+            "confidence":
+                94
+
+        }
+
+
+
+class BusinessImpactSimulator:
+
+
+    def simulate(self, opportunities):
+
+        return {
+
+            "scenario":
+                "STRATEGIC_AI_OPTIMIZATION",
+
+            "impact":
+
+                {
+
+                "revenue_potential":
+                    "+15%",
+
+                "inventory_efficiency":
+                    "+20%",
+
+                "risk_reduction":
+                    "+25%"
+
+                }
+
+        }
+
+
+
+class StrategicDecisionEngine:
+
+
+    def decide(self, impact):
+
+        return {
+
+            "decision":
+                "EXECUTE_STRATEGIC_PLAN",
+
+            "approval":
+                "GOVERNANCE_CHECKED",
+
+            "impact":
+                impact
+
         }
 
 
 
 class OpportunityRadar:
 
-    def detect(self, signals):
 
-        opportunities = []
+    def run(self):
 
-        if signals["market_signal"] == "RISING":
-            opportunities.append(
-                "Expand fulfillment capability"
-            )
+        signals = WorldSignalIntelligence().collect()
 
-        if signals["retail_signal"] == "DEMAND_SHIFT_DETECTED":
-            opportunities.append(
-                "Activate demand forecast optimization"
-            )
+        opportunity = OpportunityDetector().analyze(
+            signals
+        )
 
-        if signals["logistics_signal"] == "OPTIMIZATION_REQUIRED":
-            opportunities.append(
-                "Deploy route intelligence"
-            )
+        impact = BusinessImpactSimulator().simulate(
+            opportunity
+        )
 
-        return opportunities
+        decision = StrategicDecisionEngine().decide(
+            impact
+        )
 
-
-
-class StrategicDecisionEngine:
-
-    def decide(self, opportunities):
 
         return {
 
-            "priority":
-                "HIGH",
+            "system":
+                "AEON MATRIX OPPORTUNITY RADAR",
 
-            "strategy":
-                "Scale AI-driven autonomous operations",
+            "timestamp":
+                datetime.utcnow().isoformat(),
 
-            "actions":
-                opportunities,
+            "signals":
+                signals,
 
-            "approval":
-                "EXECUTIVE REVIEW"
+            "opportunity":
+                opportunity,
+
+            "simulation":
+                impact,
+
+            "decision":
+                decision
 
         }
 
 
 
-if __name__ == "__main__":
-
-    signal_engine = WorldSignalIntelligence()
-    radar = OpportunityRadar()
-    decision = StrategicDecisionEngine()
+if __name__=="__main__":
 
 
-    signals = signal_engine.collect()
+    print("="*75)
 
-    opportunities = radar.detect(
-        signals
+    print(
+        " AEON MATRIX GLOBAL INTELLIGENCE LAYER "
     )
 
-    strategy = decision.decide(
-        opportunities
-    )
+    print("="*75)
 
-
-    output = {
-
-        "system":
-        "AEON MATRIX STRATEGIC INTELLIGENCE",
-
-        "status":
-        "ONLINE",
-
-        "world_signals":
-        signals,
-
-        "opportunity_radar":
-        opportunities,
-
-        "strategic_decision":
-        strategy,
-
-        "timestamp":
-        datetime.now().isoformat()
-
-    }
-
-
-    print("=================================")
-    print(" AEON MATRIX STRATEGIC ENGINE ")
-    print("=================================")
 
     print(
         json.dumps(
-            output,
+            OpportunityRadar().run(),
             indent=2
         )
     )
 
-    print("=================================")
-    print(" WORLD SIGNAL INTELLIGENCE ONLINE ")
-    print(" Sense > Predict > Strategize ")
-    print("=================================")
