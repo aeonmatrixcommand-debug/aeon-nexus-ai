@@ -397,6 +397,42 @@
       ],
       "status": "COMPLIANT"
     }
+  },
+  {
+    "event": "\nWarehouse DC:\nInventory mismatch detected\nOrder delay increasing\nDriver ETA unstable\n",
+    "risk": {
+      "risk_score": 75,
+      "risk_level": "HIGH"
+    },
+    "governance": {
+      "action": "Inventory Re-Sync",
+      "rules_checked": [
+        "NO_SCAN_NO_MOVE",
+        "WEIGHT_VERIFICATION_REQUIRED",
+        "CARTON_RESPONSIBILITY_CHAIN",
+        "SHELF_LIFE_PROTECTION",
+        "ETA_CHANGE_CONTROL"
+      ],
+      "status": "COMPLIANT"
+    }
+  },
+  {
+    "event": "\nWarehouse DC:\nInventory mismatch detected\nOrder delay increasing\nDriver ETA unstable\n",
+    "risk": {
+      "risk_score": 75,
+      "risk_level": "HIGH"
+    },
+    "governance": {
+      "action": "Inventory Re-Sync",
+      "rules_checked": [
+        "NO_SCAN_NO_MOVE",
+        "WEIGHT_VERIFICATION_REQUIRED",
+        "CARTON_RESPONSIBILITY_CHAIN",
+        "SHELF_LIFE_PROTECTION",
+        "ETA_CHANGE_CONTROL"
+      ],
+      "status": "COMPLIANT"
+    }
   }
 ]
 >>>>>>> 020570a (feat: add Jules generated autonomous intelligence modules)
