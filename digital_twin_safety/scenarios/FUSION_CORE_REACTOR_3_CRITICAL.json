@@ -1,0 +1,61 @@
+{
+  "scenario_id": "FUSION_CORE_REACTOR_3_CRITICAL",
+  "type": "SAFETY_INTELLIGENCE_STRESS_TEST",
+  "system": "FUSION_CORE_REACTOR_3",
+  "severity": "CRITICAL",
+
+  "telemetry": {
+    "core_temperature_c": 942.5,
+    "temperature_threshold_c": 850,
+    "coolant_pressure_mpa": 1.2,
+    "optimal_pressure_mpa": 4.5,
+    "vibration_delta_percent": 320,
+    "control_rod_insertion_percent": 12
+  },
+
+  "incident_timeline": [
+    {
+      "time": "00:42:15 UTC",
+      "event": "Coolant Pump Alpha thermal breaker tripped",
+      "impact": "Core temperature linear ascent"
+    },
+    {
+      "time": "00:51:04 UTC",
+      "event": "Auxiliary reservoir backup valve 4B jammed",
+      "impact": "Backup cooling unavailable"
+    },
+    {
+      "time": "00:58:30 UTC",
+      "event": "Secondary coolant pressure decay exceeded Delta-P limit",
+      "impact": "Safety profile violation"
+    }
+  ],
+
+  "ai_analysis": {
+    "risk_engine": {
+      "thermal_runaway_probability": "HIGH",
+      "estimated_window_minutes": 22
+    },
+
+    "failure_chain": [
+      "coolant_pump_failure",
+      "pressure_decay",
+      "thermal_escalation",
+      "containment_risk"
+    ]
+  },
+
+  "guardian_policy": {
+    "decision": "ESCALATE",
+    "automation_mode": "LOCKED",
+    "human_authorization_required": true,
+    "audit_required": true
+  },
+
+  "digital_twin_actions": [
+    "simulate_cooling_recovery",
+    "simulate_shutdown_sequence",
+    "evaluate_containment_risk",
+    "generate_operator_briefing"
+  ]
+}
