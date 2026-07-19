@@ -12,3 +12,13 @@ def coordinate(context):
         "decision": "EXECUTE",
         "confidence": 0.9
     }
+
+
+class AgentCoordinator:
+
+    def assign(self, task):
+        return {
+            "task": task,
+            "agent": "Auto Assigned Agent",
+            "status": "ALLOCATED"
+        }
