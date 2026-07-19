@@ -1,5 +1,5 @@
-from src.digital_twin.models.twin_state import DigitalTwinState
-from src.digital_twin.engine.risk_engine import RiskEngine
+from digital_twin.models.twin_state import DigitalTwinState
+from digital_twin.engine.risk_engine import RiskEngine
 
 
 def test_create_digital_twin_state():
