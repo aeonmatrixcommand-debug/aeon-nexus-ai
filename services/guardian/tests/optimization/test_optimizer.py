@@ -1,15 +1,24 @@
-
-from services.guardian.optimization.engine import (
-    OptimizationEngine
-)
+from services.guardian.optimization.runtime_optimizer import RuntimeOptimizer
 
 
 def test_optimizer():
 
-    r=OptimizationEngine().optimize(
-        100,
-        150,
-        160
+    optimizer = RuntimeOptimizer()
+
+    result = optimizer.optimize(
+        {
+            "confidence": 0.94,
+            "agents": [
+                {
+                    "name": "Forecast",
+                    "performance": 90
+                },
+                {
+                    "name": "Risk",
+                    "performance": 80
+                }
+            ]
+        }
     )
 
-    assert "action" in r
+    assert result["decision"]["decision_score"] == 94
