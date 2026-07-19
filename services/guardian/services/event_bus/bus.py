@@ -1,4 +1,4 @@
-from core.brain.memory import memory
+from services.guardian.core.brain.memory import memory
 
 class EventBus:
     def __init__(self):

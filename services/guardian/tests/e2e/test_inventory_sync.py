@@ -1,4 +1,4 @@
-from core.inventory_sync.service import InventorySyncService
+from services.guardian.core.inventory_sync.service import InventorySyncService
 
 def test_inventory_sync():
     service = InventorySyncService()

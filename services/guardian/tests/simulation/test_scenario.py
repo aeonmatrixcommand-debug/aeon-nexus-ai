@@ -1,4 +1,4 @@
-from core.scenario_engine.service import ScenarioEngine
+from services.guardian.core.scenario_engine.service import ScenarioEngine
 
 def test_compare():
     result = ScenarioEngine().compare([{}, {}])

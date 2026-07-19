@@ -1,8 +1,8 @@
-from workflow_intelligence.discovery.process_discovery import discover
-from workflow_intelligence.generator.workflow_generator import generate
-from workflow_intelligence.execution.task_executor import execute
-from workflow_intelligence.monitor.workflow_monitor import monitor
-from workflow_intelligence.memory.process_memory import save
+from .discovery.process_discovery import discover
+from .generator.workflow_generator import generate
+from .execution.task_executor import execute
+from .monitor.workflow_monitor import monitor
+from .memory.process_memory import save
 
 
 process = discover(

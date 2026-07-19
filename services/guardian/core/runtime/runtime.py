@@ -1,4 +1,4 @@
-from core.health.service import HealthService
+from services.guardian.core.health.service import HealthService
 
 class Runtime:
     VERSION = "0.1.0"

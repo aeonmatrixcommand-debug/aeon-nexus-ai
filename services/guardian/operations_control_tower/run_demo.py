@@ -1,8 +1,8 @@
-from operations_control_tower.monitor.operations_monitor import monitor
-from operations_control_tower.resource.resource_controller import allocate
-from operations_control_tower.priority.action_priority import prioritize
-from operations_control_tower.dashboard.control_dashboard import generate
-from operations_control_tower.memory.operations_memory import save
+from .monitor.operations_monitor import monitor
+from .resource.resource_controller import allocate
+from .priority.action_priority import prioritize
+from .dashboard.control_dashboard import generate
+from .memory.operations_memory import save
 
 
 operation = monitor(

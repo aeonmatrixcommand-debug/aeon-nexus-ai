@@ -1,6 +1,6 @@
-from core.telemetry.collector import TelemetryCollector
-from core.eta_prediction.engine import ETAPrediction
-from core.risk_engine.engine import RiskEngine
+from services.guardian.core.telemetry.collector import TelemetryCollector
+from services.guardian.core.eta_prediction.engine import ETAPrediction
+from services.guardian.core.risk_engine.engine import RiskEngine
 
 class AEONMatrix:
 

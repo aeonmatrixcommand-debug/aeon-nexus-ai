@@ -1,8 +1,8 @@
-from realtime_command_center.telemetry.telemetry_collector import collect
-from realtime_command_center.event.event_processor import process
-from realtime_command_center.status.status_engine import monitor
-from realtime_command_center.decision.decision_router import route
-from realtime_command_center.memory.live_memory import save
+from .telemetry.telemetry_collector import collect
+from .event.event_processor import process
+from .status.status_engine import monitor
+from .decision.decision_router import route
+from .memory.live_memory import save
 
 
 telemetry = collect(

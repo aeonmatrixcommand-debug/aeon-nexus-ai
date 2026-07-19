@@ -1,8 +1,8 @@
-from cognitive_memory.event_memory.event_store import store as store_event
-from cognitive_memory.decision_memory.decision_store import store as store_decision
-from cognitive_memory.outcome_memory.outcome_store import store as store_outcome
-from cognitive_memory.retrieval.context_retriever import retrieve
-from cognitive_memory.memory_store.memory_engine import save
+from .event_memory.event_store import store as store_event
+from .decision_memory.decision_store import store as store_decision
+from .outcome_memory.outcome_store import store as store_outcome
+from .retrieval.context_retriever import retrieve
+from .memory_store.memory_engine import save
 
 
 event = store_event(

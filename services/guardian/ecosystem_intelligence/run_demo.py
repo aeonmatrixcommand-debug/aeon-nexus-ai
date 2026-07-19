@@ -1,8 +1,8 @@
-from ecosystem_intelligence.partner.partner_engine import analyze
-from ecosystem_intelligence.signal.external_signal import detect
-from ecosystem_intelligence.relationship.ecosystem_graph import connect
-from ecosystem_intelligence.insight.ecosystem_insight import generate
-from ecosystem_intelligence.memory.ecosystem_memory import save
+from .partner.partner_engine import analyze
+from .signal.external_signal import detect
+from .relationship.ecosystem_graph import connect
+from .insight.ecosystem_insight import generate
+from .memory.ecosystem_memory import save
 
 
 partner = analyze(

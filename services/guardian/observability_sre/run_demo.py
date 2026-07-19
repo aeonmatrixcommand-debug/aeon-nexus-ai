@@ -1,8 +1,8 @@
-from observability_sre.metrics.metrics_engine import collect_metrics
-from observability_sre.health.service_health import check_service
-from observability_sre.incident.incident_detector import detect_incident
-from observability_sre.reliability.reliability_score import calculate_score
-from observability_sre.recovery.recovery_signal import create_recovery_signal
+from .metrics.metrics_engine import collect_metrics
+from .health.service_health import check_service
+from .incident.incident_detector import detect_incident
+from .reliability.reliability_score import calculate_score
+from .recovery.recovery_signal import create_recovery_signal
 
 
 metrics = collect_metrics(

@@ -1,6 +1,6 @@
-from ai_avatar.core.avatar import AIAvatar
-from ai_avatar.conversation.session import ConversationSession
-from ai_avatar.learning.learning_companion import LearningCompanion
+from .core.avatar import AIAvatar
+from .conversation.session import ConversationSession
+from .learning.learning_companion import LearningCompanion
 
 
 knowledge = [

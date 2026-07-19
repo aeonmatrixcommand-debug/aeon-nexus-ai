@@ -1,4 +1,4 @@
-from digital_twin_integration.state.twin_state import EnterpriseTwinState
+from services.guardian.digital_twin_integration.state.twin_state import EnterpriseTwinState
 
 
 class TwinSyncEngine:

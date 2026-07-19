@@ -1,8 +1,8 @@
-from autonomous_innovation.learning.outcome_learning import learn_outcome
-from autonomous_innovation.discovery.pattern_discovery import discover_pattern
-from autonomous_innovation.proposal.innovation_proposal import create_proposal
-from autonomous_innovation.optimization.self_optimizer import optimize
-from autonomous_innovation.memory.innovation_memory import save
+from .learning.outcome_learning import learn_outcome
+from .discovery.pattern_discovery import discover_pattern
+from .proposal.innovation_proposal import create_proposal
+from .optimization.self_optimizer import optimize
+from .memory.innovation_memory import save
 
 
 learning = learn_outcome(

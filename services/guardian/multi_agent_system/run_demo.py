@@ -1,8 +1,8 @@
-from multi_agent_system.agents.agent_registry import AgentRegistry
-from multi_agent_system.memory.agent_memory import AgentMemory
-from multi_agent_system.bus.communication_bus import AgentBus
-from multi_agent_system.coordinator.agent_coordinator import AgentCoordinator
-from multi_agent_system.signals.collaboration_signal import create_signal
+from .agents.agent_registry import AgentRegistry
+from .memory.agent_memory import AgentMemory
+from .bus.communication_bus import AgentBus
+from .coordinator.agent_coordinator import AgentCoordinator
+from .signals.collaboration_signal import create_signal
 
 
 registry = AgentRegistry()

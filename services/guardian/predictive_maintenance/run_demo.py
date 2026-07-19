@@ -1,8 +1,8 @@
-from predictive_maintenance.asset.asset_registry import register
-from predictive_maintenance.health.health_predictor import predict
-from predictive_maintenance.planning.maintenance_planner import schedule
-from predictive_maintenance.risk.failure_risk import analyze
-from predictive_maintenance.memory.asset_memory import save
+from .asset.asset_registry import register
+from .health.health_predictor import predict
+from .planning.maintenance_planner import schedule
+from .risk.failure_risk import analyze
+from .memory.asset_memory import save
 
 
 asset = register(

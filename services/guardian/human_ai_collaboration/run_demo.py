@@ -1,8 +1,8 @@
-from human_ai_collaboration.workforce.workforce_engine import analyze
-from human_ai_collaboration.skill.skill_mapper import map_skill
-from human_ai_collaboration.assignment.task_assignment import assign
-from human_ai_collaboration.monitor.collaboration_monitor import monitor
-from human_ai_collaboration.memory.workforce_memory import save
+from .workforce.workforce_engine import analyze
+from .skill.skill_mapper import map_skill
+from .assignment.task_assignment import assign
+from .monitor.collaboration_monitor import monitor
+from .memory.workforce_memory import save
 
 
 team = analyze(

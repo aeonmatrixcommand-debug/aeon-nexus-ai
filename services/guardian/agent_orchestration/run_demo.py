@@ -1,8 +1,8 @@
-from agent_orchestration.registry.agent_registry import register_agent
-from agent_orchestration.workflow.workflow_engine import create_workflow
-from agent_orchestration.allocation.task_allocator import allocate
-from agent_orchestration.guardian.policy_gate import check_policy
-from agent_orchestration.memory.execution_memory import save_execution
+from .registry.agent_registry import register_agent
+from .workflow.workflow_engine import create_workflow
+from .allocation.task_allocator import allocate
+from .guardian.policy_gate import check_policy
+from .memory.execution_memory import save_execution
 
 
 agents = [

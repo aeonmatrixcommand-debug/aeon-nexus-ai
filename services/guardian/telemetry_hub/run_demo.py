@@ -1,8 +1,8 @@
-from telemetry_hub.collector.event_collector import collect
-from telemetry_hub.processor.signal_processor import process
-from telemetry_hub.router.event_router import route
-from telemetry_hub.alert.cognitive_alert import generate
-from telemetry_hub.memory.telemetry_memory import save
+from .collector.event_collector import collect
+from .processor.signal_processor import process
+from .router.event_router import route
+from .alert.cognitive_alert import generate
+from .memory.telemetry_memory import save
 
 
 event = collect(

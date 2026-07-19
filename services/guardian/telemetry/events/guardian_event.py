@@ -1,5 +1,5 @@
-from governance.guardian_ai.guardian import GuardianAI
-from audit.audit_logger import write_audit
+from services.guardian.governance.guardian_ai.guardian import GuardianAI
+from services.guardian.audit.audit_logger import write_audit
 
 
 def run_guardian_test():

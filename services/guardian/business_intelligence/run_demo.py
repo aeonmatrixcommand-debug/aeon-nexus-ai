@@ -1,10 +1,10 @@
-from business_intelligence.kpi.kpi_engine import analyze as kpi
-from business_intelligence.revenue.revenue_analyzer import analyze as revenue
-from business_intelligence.cost.cost_optimizer import analyze as cost
-from business_intelligence.value.value_recovery import calculate
-from business_intelligence.forecast.business_forecast import predict
-from business_intelligence.insight.executive_insight import generate
-from business_intelligence.memory.business_memory import save
+from .kpi.kpi_engine import analyze as kpi
+from .revenue.revenue_analyzer import analyze as revenue
+from .cost.cost_optimizer import analyze as cost
+from .value.value_recovery import calculate
+from .forecast.business_forecast import predict
+from .insight.executive_insight import generate
+from .memory.business_memory import save
 
 
 operation = {

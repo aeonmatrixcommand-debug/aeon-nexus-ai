@@ -1,8 +1,8 @@
-from zero_trust_identity.identity.identity_registry import register_identity
-from zero_trust_identity.device.device_trust import verify_device
-from zero_trust_identity.mfa.mfa_verify import verify_mfa
-from zero_trust_identity.policy.access_policy import evaluate
-from zero_trust_identity.audit.security_audit import record
+from .identity.identity_registry import register_identity
+from .device.device_trust import verify_device
+from .mfa.mfa_verify import verify_mfa
+from .policy.access_policy import evaluate
+from .audit.security_audit import record
 
 
 identity = register_identity(

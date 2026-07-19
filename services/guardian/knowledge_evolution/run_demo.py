@@ -1,8 +1,8 @@
-from knowledge_evolution.registry.knowledge_registry import KnowledgeRegistry
-from knowledge_evolution.sop.sop_engine import analyze_sop
-from knowledge_evolution.lessons.lesson_memory import store_lesson
-from knowledge_evolution.best_practice.best_practice import generate_best_practice
-from knowledge_evolution.retrieval.knowledge_search import search
+from .registry.knowledge_registry import KnowledgeRegistry
+from .sop.sop_engine import analyze_sop
+from .lessons.lesson_memory import store_lesson
+from .best_practice.best_practice import generate_best_practice
+from .retrieval.knowledge_search import search
 
 
 registry = KnowledgeRegistry()

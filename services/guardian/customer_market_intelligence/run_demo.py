@@ -1,8 +1,8 @@
-from customer_market_intelligence.signal.customer_signal import analyze
-from customer_market_intelligence.trend.market_trend import detect
-from customer_market_intelligence.behavior.consumer_behavior import evaluate
-from customer_market_intelligence.opportunity.opportunity_engine import discover
-from customer_market_intelligence.memory.customer_memory import save
+from .signal.customer_signal import analyze
+from .trend.market_trend import detect
+from .behavior.consumer_behavior import evaluate
+from .opportunity.opportunity_engine import discover
+from .memory.customer_memory import save
 
 
 signal = analyze(

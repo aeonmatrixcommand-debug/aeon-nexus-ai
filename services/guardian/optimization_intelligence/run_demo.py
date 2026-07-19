@@ -1,9 +1,9 @@
-from optimization_intelligence.engine.optimization_engine import analyze
-from optimization_intelligence.analysis.performance_analyzer import evaluate
-from optimization_intelligence.recommendation.action_recommender import recommend
-from optimization_intelligence.value.value_impact import calculate
-from optimization_intelligence.feedback.learning_feedback import generate
-from optimization_intelligence.memory.optimization_memory import save
+from .engine.optimization_engine import analyze
+from .analysis.performance_analyzer import evaluate
+from .recommendation.action_recommender import recommend
+from .value.value_impact import calculate
+from .feedback.learning_feedback import generate
+from .memory.optimization_memory import save
 
 
 operation = {

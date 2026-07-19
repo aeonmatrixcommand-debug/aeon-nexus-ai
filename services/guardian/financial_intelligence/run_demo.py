@@ -1,9 +1,9 @@
-from financial_intelligence.revenue.revenue_analyzer import analyze
-from financial_intelligence.cost.cost_optimizer import optimize
-from financial_intelligence.profit.profit_engine import calculate
-from financial_intelligence.roi.roi_engine import evaluate
-from financial_intelligence.value.value_optimizer import optimize as value_optimize
-from financial_intelligence.memory.financial_memory import save
+from .revenue.revenue_analyzer import analyze
+from .cost.cost_optimizer import optimize
+from .profit.profit_engine import calculate
+from .roi.roi_engine import evaluate
+from .value.value_optimizer import optimize as value_optimize
+from .memory.financial_memory import save
 
 
 revenue = analyze(

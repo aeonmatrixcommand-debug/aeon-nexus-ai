@@ -1,8 +1,8 @@
-from strategic_intelligence.goal.goal_engine import create_goal
-from strategic_intelligence.forecast.forecast_engine import forecast
-from strategic_intelligence.scenario.scenario_planner import create_scenario
-from strategic_intelligence.evaluation.strategy_evaluator import evaluate
-from strategic_intelligence.memory.strategy_memory import save
+from .goal.goal_engine import create_goal
+from .forecast.forecast_engine import forecast
+from .scenario.scenario_planner import create_scenario
+from .evaluation.strategy_evaluator import evaluate
+from .memory.strategy_memory import save
 
 
 goal = create_goal(
