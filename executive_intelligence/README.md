@@ -1,13 +1,29 @@
-# AEON MATRIX Executive Intelligence
+# AEON MATRIX Executive Intelligence Layer
 
-Pipeline:
+Sprint 111
 
-Risk Forecast
-      ↓
-Decision Intelligence
-      ↓
-Governance Check
-      ↓
-Executive Briefing
-      ↓
-Command Center
+Executive Flow:
+
+Operational Data
+        |
+        v
+KPI Intelligence
+        |
+        v
+AI Recommendation
+        |
+        v
+Business Simulation
+        |
+        v
+Executive Decision
+
+
+KPIs:
+
+- OTIF
+- SLA
+- Inventory Accuracy
+- Forecast Accuracy
+- Risk Score
+- Cost Optimization
