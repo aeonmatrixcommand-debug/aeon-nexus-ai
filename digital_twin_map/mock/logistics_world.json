@@ -1,0 +1,32 @@
+{
+  "world":"AEON MATRIX 3D LOGISTICS TWIN",
+
+  "warehouses":[
+    {
+      "id":"DC-001",
+      "capacity":82,
+      "temperature":24,
+      "risk":"LOW"
+    },
+    {
+      "id":"DC-002",
+      "capacity":94,
+      "temperature":29,
+      "risk":"WARNING"
+    }
+  ],
+
+  "fleet":[
+    {
+      "vehicle":"TRUCK-042",
+      "eta":"14:35",
+      "status":"ON_ROUTE",
+      "otif_risk":12
+    }
+  ],
+
+  "inventory":{
+    "health":91,
+    "expiry_risk":8
+  }
+}

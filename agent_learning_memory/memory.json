@@ -1,0 +1,21 @@
+[
+  {
+    "memory_id": "MEM-20260719081447",
+    "event": {
+      "system": "AEON MATRIX",
+      "incident": "Inventory Risk Detection"
+    },
+    "decision": {
+      "action": "INVENTORY_RE_SYNC",
+      "agent": "Decision Agent"
+    },
+    "outcome": {
+      "status": "RECOVERED",
+      "kpi": {
+        "OTIF": "RESTORED"
+      }
+    },
+    "learning": "Improve future decision confidence",
+    "timestamp": "2026-07-19T08:14:47.484317"
+  }
+]
