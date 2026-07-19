@@ -2,7 +2,6 @@ from services.guardian.simulation.digital_twin_loop import DigitalTwinLoop
 
 
 def test_digital_twin_simulation():
-
     twin = DigitalTwinLoop()
 
     result = twin.simulate(
