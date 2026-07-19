@@ -1,8 +1,8 @@
-from human_ai_workforce.signal.workforce_signal import analyze
-from human_ai_workforce.skill.skill_engine import evaluate
-from human_ai_workforce.agent.ai_collaboration import collaborate
-from human_ai_workforce.optimization.workforce_optimizer import optimize
-from human_ai_workforce.memory.workforce_memory import save
+from .signal.workforce_signal import analyze
+from .skill.skill_engine import evaluate
+from .agent.ai_collaboration import collaborate
+from .optimization.workforce_optimizer import optimize
+from .memory.workforce_memory import save
 
 
 workforce = analyze(

@@ -1,7 +1,7 @@
-from reasoning_fusion.analysis.impact_analyzer import ImpactAnalyzer
-from reasoning_fusion.explanation.decision_explainer import explain
-from reasoning_fusion.recommendation.executive_recommendation import generate_recommendation
-from reasoning_fusion.validation.guardian_check import validate
+from .analysis.impact_analyzer import ImpactAnalyzer
+from .explanation.decision_explainer import explain
+from .recommendation.executive_recommendation import generate_recommendation
+from .validation.guardian_check import validate
 
 
 context = {

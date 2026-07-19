@@ -1,0 +1,37 @@
+name: Runtime Integration Gate
+
+
+on:
+ pull_request:
+  branches:
+   - main
+
+
+jobs:
+
+ runtime-test:
+
+  runs-on: ubuntu-latest
+
+
+  steps:
+
+  - uses: actions/checkout@v4
+
+
+  - uses: actions/setup-python@v5
+    with:
+      python-version: "3.13"
+
+
+  - run: pip install -r requirements.txt
+
+
+  - name: Runtime Tests
+    run: |
+      pytest -q
+
+
+  - name: Security Gate
+    run: |
+      python -m compileall services

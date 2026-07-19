@@ -1,4 +1,4 @@
-from core.decision_intelligence.service import DecisionIntelligence
+from services.guardian.core.decision_intelligence.service import DecisionIntelligence
 
 def test_recommendation():
     result = DecisionIntelligence().recommend({})

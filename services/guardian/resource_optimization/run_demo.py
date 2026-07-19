@@ -1,8 +1,8 @@
-from resource_optimization.registry.resource_registry import register
-from resource_optimization.capacity.capacity_analyzer import analyze
-from resource_optimization.allocation.allocation_engine import allocate
-from resource_optimization.monitor.utilization_monitor import monitor
-from resource_optimization.memory.resource_memory import save
+from .registry.resource_registry import register
+from .capacity.capacity_analyzer import analyze
+from .allocation.allocation_engine import allocate
+from .monitor.utilization_monitor import monitor
+from .memory.resource_memory import save
 
 
 resource = register(

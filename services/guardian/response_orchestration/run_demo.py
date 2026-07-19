@@ -1,9 +1,9 @@
-from response_orchestration.engine.response_engine import create
-from response_orchestration.action.action_planner import plan
-from response_orchestration.policy.policy_validator import validate
-from response_orchestration.workflow.workflow_engine import execute
-from response_orchestration.outcome.outcome_tracker import track
-from response_orchestration.memory.response_memory import save
+from .engine.response_engine import create
+from .action.action_planner import plan
+from .policy.policy_validator import validate
+from .workflow.workflow_engine import execute
+from .outcome.outcome_tracker import track
+from .memory.response_memory import save
 
 
 alert = {

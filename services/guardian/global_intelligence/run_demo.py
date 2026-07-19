@@ -1,8 +1,8 @@
-from global_intelligence.collector.global_signal import collect
-from global_intelligence.analyzer.future_analyzer import analyze
-from global_intelligence.impact.impact_engine import evaluate
-from global_intelligence.preparedness.action_engine import recommend
-from global_intelligence.memory.future_memory import save
+from .collector.global_signal import collect
+from .analyzer.future_analyzer import analyze
+from .impact.impact_engine import evaluate
+from .preparedness.action_engine import recommend
+from .memory.future_memory import save
 
 
 signal = collect(

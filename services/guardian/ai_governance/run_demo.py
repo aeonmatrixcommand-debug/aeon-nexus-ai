@@ -1,8 +1,8 @@
-from ai_governance.policy.policy_engine import evaluate
-from ai_governance.risk.risk_engine import assess
-from ai_governance.compliance.compliance_validator import validate
-from ai_governance.audit.audit_logger import record
-from ai_governance.memory.governance_memory import save
+from .policy.policy_engine import evaluate
+from .risk.risk_engine import assess
+from .compliance.compliance_validator import validate
+from .audit.audit_logger import record
+from .memory.governance_memory import save
 
 
 policy = evaluate(

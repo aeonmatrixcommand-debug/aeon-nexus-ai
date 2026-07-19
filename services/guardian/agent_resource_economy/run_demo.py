@@ -1,8 +1,8 @@
-from agent_resource_economy.registry.agent_registry import register
-from agent_resource_economy.compute.compute_allocator import allocate_compute
-from agent_resource_economy.scheduler.priority_scheduler import schedule
-from agent_resource_economy.budget.budget_controller import check_budget
-from agent_resource_economy.memory.resource_memory import save
+from .registry.agent_registry import register
+from .compute.compute_allocator import allocate_compute
+from .scheduler.priority_scheduler import schedule
+from .budget.budget_controller import check_budget
+from .memory.resource_memory import save
 
 
 agent = register(

@@ -1,8 +1,8 @@
-from executive_workflow.priority.priority_engine import calculate_priority
-from executive_workflow.approval.approval_intelligence import approval_route
-from executive_workflow.governance.guardian_gate import guardian_validate
-from executive_workflow.planner.workflow_planner import create_workflow
-from executive_workflow.tracking.action_tracker import track
+from .priority.priority_engine import calculate_priority
+from .approval.approval_intelligence import approval_route
+from .governance.guardian_gate import guardian_validate
+from .planner.workflow_planner import create_workflow
+from .tracking.action_tracker import track
 
 
 priority = calculate_priority(

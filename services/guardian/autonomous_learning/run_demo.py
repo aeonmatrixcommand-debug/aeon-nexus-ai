@@ -1,8 +1,8 @@
-from autonomous_learning.feedback.feedback_engine import collect
-from autonomous_learning.analysis.outcome_analyzer import analyze
-from autonomous_learning.optimization.optimizer import optimize
-from autonomous_learning.pattern.pattern_detector import detect
-from autonomous_learning.memory.learning_memory import save
+from .feedback.feedback_engine import collect
+from .analysis.outcome_analyzer import analyze
+from .optimization.optimizer import optimize
+from .pattern.pattern_detector import detect
+from .memory.learning_memory import save
 
 
 feedback = collect(

@@ -1,8 +1,8 @@
-from digital_twin_simulation.model.twin_model import create
-from digital_twin_simulation.scenario.scenario_engine import simulate
-from digital_twin_simulation.impact.impact_analyzer import analyze
-from digital_twin_simulation.prediction.future_predictor import predict
-from digital_twin_simulation.memory.simulation_memory import save
+from .model.twin_model import create
+from .scenario.scenario_engine import simulate
+from .impact.impact_analyzer import analyze
+from .prediction.future_predictor import predict
+from .memory.simulation_memory import save
 
 
 twin = create(

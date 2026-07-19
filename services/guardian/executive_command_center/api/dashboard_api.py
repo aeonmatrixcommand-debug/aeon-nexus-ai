@@ -1,4 +1,4 @@
-from executive_command_center.dashboard.dashboard import generate_dashboard
+from services.guardian.executive_command_center.dashboard.dashboard import generate_dashboard
 
 
 def get_dashboard():

@@ -1,7 +1,7 @@
-from enterprise_knowledge.registry.knowledge_registry import KnowledgeRegistry
-from enterprise_knowledge.memory.sop_memory import SOPMemory
-from enterprise_knowledge.memory.lessons_learned import LessonsLearned
-from enterprise_knowledge.retrieval.knowledge_search import search_knowledge
+from .registry.knowledge_registry import KnowledgeRegistry
+from .memory.sop_memory import SOPMemory
+from .memory.lessons_learned import LessonsLearned
+from .retrieval.knowledge_search import search_knowledge
 
 
 registry = KnowledgeRegistry()

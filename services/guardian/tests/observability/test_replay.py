@@ -1,4 +1,4 @@
-from core.replay_engine.service import ReplayEngine
+from services.guardian.core.replay_engine.service import ReplayEngine
 
 def test_replay():
     result = ReplayEngine().replay([{}, {}])

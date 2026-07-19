@@ -1,5 +1,5 @@
-from digital_twin_live.models.state_model import TwinState
-from digital_twin_live.telemetry.twin_events import create_twin_event
+from services.guardian.digital_twin_live.models.state_model import TwinState
+from services.guardian.digital_twin_live.telemetry.twin_events import create_twin_event
 
 
 class DigitalTwinEngine:

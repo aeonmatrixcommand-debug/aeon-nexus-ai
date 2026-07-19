@@ -1,9 +1,9 @@
-from alert_intelligence.engine.alert_engine import create
-from alert_intelligence.priority.priority_engine import calculate
-from alert_intelligence.correlation.signal_correlation import analyze
-from alert_intelligence.notification.notification_router import route
-from alert_intelligence.escalation.escalation_engine import escalate
-from alert_intelligence.memory.alert_memory import save
+from .engine.alert_engine import create
+from .priority.priority_engine import calculate
+from .correlation.signal_correlation import analyze
+from .notification.notification_router import route
+from .escalation.escalation_engine import escalate
+from .memory.alert_memory import save
 
 
 signal = {

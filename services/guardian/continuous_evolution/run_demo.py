@@ -1,8 +1,8 @@
-from continuous_evolution.evaluation.performance_evaluator import evaluate
-from continuous_evolution.learning.feedback_loop import learn
-from continuous_evolution.improvement.improvement_planner import plan
-from continuous_evolution.controller.evolution_controller import execute
-from continuous_evolution.memory.evolution_memory import save
+from .evaluation.performance_evaluator import evaluate
+from .learning.feedback_loop import learn
+from .improvement.improvement_planner import plan
+from .controller.evolution_controller import execute
+from .memory.evolution_memory import save
 
 
 evaluation = evaluate(

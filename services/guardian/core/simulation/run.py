@@ -1,5 +1,5 @@
-from core.orchestrator.engine import AIOrchestrator
-from core.decision_engine.engine import DecisionEngine
+from services.guardian.core.orchestrator.engine import AIOrchestrator
+from services.guardian.core.decision_engine.engine import DecisionEngine
 
 def run(order):
     orchestrator = AIOrchestrator()

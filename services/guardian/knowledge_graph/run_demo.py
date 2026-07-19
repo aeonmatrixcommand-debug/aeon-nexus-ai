@@ -1,8 +1,8 @@
-from knowledge_graph.entity.entity_registry import register
-from knowledge_graph.relationship.relation_engine import connect
-from knowledge_graph.event.event_builder import create
-from knowledge_graph.query.intelligence_query import search
-from knowledge_graph.memory.knowledge_memory import save
+from .entity.entity_registry import register
+from .relationship.relation_engine import connect
+from .event.event_builder import create
+from .query.intelligence_query import search
+from .memory.knowledge_memory import save
 
 
 entity = register(

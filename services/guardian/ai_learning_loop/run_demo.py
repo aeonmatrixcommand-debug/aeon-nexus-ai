@@ -1,8 +1,8 @@
-from ai_learning_loop.decision.decision_tracker import record_decision
-from ai_learning_loop.outcome.outcome_engine import evaluate_outcome
-from ai_learning_loop.feedback.feedback_loop import learn_from_feedback
-from ai_learning_loop.strategy.strategy_engine import improve_strategy
-from ai_learning_loop.memory.executive_memory import save_learning
+from .decision.decision_tracker import record_decision
+from .outcome.outcome_engine import evaluate_outcome
+from .feedback.feedback_loop import learn_from_feedback
+from .strategy.strategy_engine import improve_strategy
+from .memory.executive_memory import save_learning
 
 
 decision = record_decision(

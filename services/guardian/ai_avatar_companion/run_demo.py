@@ -1,8 +1,8 @@
-from ai_avatar_companion.avatar.avatar_core import create_avatar
-from ai_avatar_companion.knowledge.knowledge_navigator import search_knowledge
-from ai_avatar_companion.sop.sop_assistant import explain_sop
-from ai_avatar_companion.learning.learning_companion import recommend_learning
-from ai_avatar_companion.memory.avatar_memory import save_interaction
+from .avatar.avatar_core import create_avatar
+from .knowledge.knowledge_navigator import search_knowledge
+from .sop.sop_assistant import explain_sop
+from .learning.learning_companion import recommend_learning
+from .memory.avatar_memory import save_interaction
 
 
 avatar = create_avatar(

@@ -1,8 +1,8 @@
-from agent_os.lifecycle.agent_lifecycle import AgentLifecycle
-from agent_os.health.agent_health import check_health
-from agent_os.permission.permission_control import grant_permission
-from agent_os.tasks.task_registry import TaskRegistry
-from agent_os.evaluation.performance_score import evaluate
+from .lifecycle.agent_lifecycle import AgentLifecycle
+from .health.agent_health import check_health
+from .permission.permission_control import grant_permission
+from .tasks.task_registry import TaskRegistry
+from .evaluation.performance_score import evaluate
 
 
 agent = AgentLifecycle().create(

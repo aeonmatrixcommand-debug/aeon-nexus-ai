@@ -1,8 +1,8 @@
-from knowledge_firewall.classification.classifier import classify
-from knowledge_firewall.access.access_control import check_access
-from knowledge_firewall.policy.ai_policy import validate_ai_request
-from knowledge_firewall.guard.knowledge_guard import protect
-from knowledge_firewall.audit.audit_memory import record
+from .classification.classifier import classify
+from .access.access_control import check_access
+from .policy.ai_policy import validate_ai_request
+from .guard.knowledge_guard import protect
+from .audit.audit_memory import record
 
 
 data = classify(

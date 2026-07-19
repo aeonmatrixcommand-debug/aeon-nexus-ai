@@ -1,9 +1,9 @@
-from decision_intelligence.engine.decision_engine import create
-from decision_intelligence.scoring.confidence_score import calculate as confidence
-from decision_intelligence.risk.risk_score import calculate as risk
-from decision_intelligence.value.value_score import calculate as value
-from decision_intelligence.record.decision_record import create as record
-from decision_intelligence.memory.decision_memory import save
+from .engine.decision_engine import create
+from .scoring.confidence_score import calculate as confidence
+from .risk.risk_score import calculate as risk
+from .value.value_score import calculate as value
+from .record.decision_record import create as record
+from .memory.decision_memory import save
 
 
 context = {

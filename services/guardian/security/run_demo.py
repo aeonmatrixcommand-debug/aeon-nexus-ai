@@ -1,10 +1,10 @@
-from security.identity.device_identity import verify_device
-from security.identity.user_identity import verify_user
-from security.authentication.token_service import create_token
-from security.authorization.rbac import check_permission
-from security.gateway.api_guard import protect
-from security.audit.security_logger import log
-from security.threat.anomaly_detector import detect
+from .identity.device_identity import verify_device
+from .identity.user_identity import verify_user
+from .authentication.token_service import create_token
+from .authorization.rbac import check_permission
+from .gateway.api_guard import protect
+from .audit.security_logger import log
+from .threat.anomaly_detector import detect
 
 
 device = verify_device("WMS-TAB-001")

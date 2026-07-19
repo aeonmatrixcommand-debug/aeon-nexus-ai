@@ -1,8 +1,8 @@
-from innovation_intelligence.idea.idea_engine import generate
-from innovation_intelligence.experiment.experiment_manager import run
-from innovation_intelligence.evaluation.outcome_evaluator import evaluate
-from innovation_intelligence.learning.feedback_loop import learn
-from innovation_intelligence.memory.innovation_memory import save
+from .idea.idea_engine import generate
+from .experiment.experiment_manager import run
+from .evaluation.outcome_evaluator import evaluate
+from .learning.feedback_loop import learn
+from .memory.innovation_memory import save
 
 
 idea = generate(
