@@ -2,5 +2,5 @@ class DecisionRuntime:
     def __init__(self):
         self.status = "READY"
 
-    def execute(self):
+    def execute(self, twin):
         return {"status": self.status}
