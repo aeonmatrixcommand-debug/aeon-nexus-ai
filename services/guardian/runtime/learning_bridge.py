@@ -1,48 +1,20 @@
-from services.guardian.learning.outcome_collector import (
-    OutcomeCollector
-)
-
-from services.guardian.learning.learning_engine import (
-    LearningEngine
-)
+from datetime import datetime
 
 
-collector=OutcomeCollector()
+class LearningBridge:
 
-engine=LearningEngine()
+    def __init__(self):
+        self.events = []
 
+    def record(self, event):
+        payload = {
+            "event": event,
+            "timestamp": datetime.utcnow().isoformat()
+        }
 
+        self.events.append(payload)
 
-def process_outcome(
-    trace_id,
-    decision,
-    result
-):
+        return payload
 
-    event=collector.record(
-
-        trace_id,
-
-        decision,
-
-        result,
-
-        True,
-
-        1.0
-
-    )
-
-
-    learning=engine.analyze(
-        collector.history
-    )
-
-
-    return {
-
-        "event":event.to_dict(),
-
-        "learning":learning
-
-    }
+    def get_events(self):
+        return self.events
