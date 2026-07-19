@@ -1,20 +1,12 @@
-"""
-AEON MATRIX Digital Twin Live State
-"""
+from dataclasses import dataclass
+from datetime import datetime
 
 
-STATE = {}
+@dataclass
+class TwinState:
 
-
-def sync():
-
-    STATE.update({
-        "warehouse": "ONLINE",
-        "inventory": "STABLE",
-        "transport": "ACTIVE"
-    })
-
-    return {
-        "sync_status": "CONNECTED",
-        "entities": len(STATE)
-    }
+    warehouse: str
+    inventory: int
+    demand: int
+    risk: float
+    timestamp: str = datetime.utcnow().isoformat()
