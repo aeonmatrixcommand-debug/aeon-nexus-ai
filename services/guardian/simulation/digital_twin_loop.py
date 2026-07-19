@@ -9,16 +9,9 @@ class DigitalTwinLoop:
         self.impact = ImpactEngine()
 
     def simulate(self, context):
-
-        scenario = self.generator.create(
-            context
-        )
-
-        result = self.impact.calculate(
-            scenario
-        )
+        scenario = self.generator.create(context)
 
         return {
             "scenario": scenario,
-            "impact": result
+            "impact": self.impact.calculate(scenario)
         }
