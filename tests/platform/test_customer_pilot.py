@@ -22,7 +22,7 @@ def test_pilot():
 
 def test_feedback():
 
-    result = FeedbackEngine().analysis(
+    result = FeedbackEngine().analyze(
         [
             "faster delivery",
             "better visibility",
