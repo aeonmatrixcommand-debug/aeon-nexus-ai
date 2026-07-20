@@ -1,8 +1,8 @@
-from autonomous_workflow.engine.workflow_engine import WorkflowEngine
-from autonomous_workflow.trigger.event_trigger import evaluate
-from autonomous_workflow.planner.workflow_planner import plan
-from autonomous_workflow.execution.action_executor import execute
-from autonomous_workflow.memory.workflow_memory import save
+from .engine.workflow_engine import WorkflowEngine
+from .trigger.event_trigger import evaluate
+from .planner.workflow_planner import plan
+from .execution.action_executor import execute
+from .memory.workflow_memory import save
 
 
 engine = WorkflowEngine()

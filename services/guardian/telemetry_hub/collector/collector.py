@@ -1,4 +1,4 @@
-from telemetry_hub.bus.event_bus import EventBus
+from services.guardian.telemetry_hub.bus.event_bus import EventBus
 
 
 class TelemetryCollector:

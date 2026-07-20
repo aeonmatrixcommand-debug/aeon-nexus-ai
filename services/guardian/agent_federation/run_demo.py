@@ -1,8 +1,8 @@
-from agent_federation.registry.agent_registry import register
-from agent_federation.communication.message_bus import send
-from agent_federation.coordination.coordinator import coordinate
-from agent_federation.monitor.agent_monitor import monitor
-from agent_federation.memory.agent_memory import save
+from .registry.agent_registry import register
+from .communication.message_bus import send
+from .coordination.coordinator import coordinate
+from .monitor.agent_monitor import monitor
+from .memory.agent_memory import save
 
 
 guardian = register(

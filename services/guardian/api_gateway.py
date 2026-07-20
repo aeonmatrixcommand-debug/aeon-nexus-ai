@@ -3,10 +3,10 @@ from pydantic import BaseModel
 from datetime import datetime
 import uuid
 
-from security.jwt_manager import verify_access_token
-from security.permission_registry import check_permission
-from security.policy_engine import evaluate_policy
-from security.audit_logger import write_audit
+from services.guardian.security.jwt_manager import verify_access_token
+from services.guardian.security.permission_registry import check_permission
+from services.guardian.security.policy_engine import evaluate_policy
+from services.guardian.security.audit_logger import write_audit
 
 
 app = FastAPI(

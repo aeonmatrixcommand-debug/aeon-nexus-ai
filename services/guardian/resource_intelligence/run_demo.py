@@ -1,8 +1,8 @@
-from resource_intelligence.analyzer.resource_analyzer import analyze
-from resource_intelligence.allocation.dynamic_allocator import allocate
-from resource_intelligence.capacity.capacity_optimizer import optimize
-from resource_intelligence.cost.cost_planner import plan
-from resource_intelligence.memory.resource_memory import save
+from .analyzer.resource_analyzer import analyze
+from .allocation.dynamic_allocator import allocate
+from .capacity.capacity_optimizer import optimize
+from .cost.cost_planner import plan
+from .memory.resource_memory import save
 
 
 resource = analyze(

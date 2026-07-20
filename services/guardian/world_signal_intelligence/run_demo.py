@@ -1,8 +1,8 @@
-from world_signal_intelligence.collector.signal_collector import collect
-from world_signal_intelligence.analysis.trend_analyzer import analyze
-from world_signal_intelligence.risk.future_risk_detector import detect
-from world_signal_intelligence.opportunity.opportunity_engine import identify
-from world_signal_intelligence.memory.signal_memory import save
+from .collector.signal_collector import collect
+from .analysis.trend_analyzer import analyze
+from .risk.future_risk_detector import detect
+from .opportunity.opportunity_engine import identify
+from .memory.signal_memory import save
 
 
 signal = collect(

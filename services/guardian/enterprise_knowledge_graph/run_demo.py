@@ -1,8 +1,8 @@
-from enterprise_knowledge_graph.entity.entity_manager import create
-from enterprise_knowledge_graph.graph.relationship_graph import connect
-from enterprise_knowledge_graph.reasoning.reasoning_engine import reason
-from enterprise_knowledge_graph.query.knowledge_query import query
-from enterprise_knowledge_graph.memory.knowledge_memory import save
+from .entity.entity_manager import create
+from .graph.relationship_graph import connect
+from .reasoning.reasoning_engine import reason
+from .query.knowledge_query import query
+from .memory.knowledge_memory import save
 
 
 warehouse = create(

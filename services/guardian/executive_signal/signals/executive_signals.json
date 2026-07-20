@@ -2,3 +2,6 @@
   "system": "AEON MATRIX",
   "signals": []
 }
+{"signal_type": "EXECUTIVE_INTELLIGENCE_SIGNAL", "priority": "CRITICAL", "risk_score": 91, "business_impact": {"operation": "INVENTORY", "financial_risk": 91, "customer_service_risk": 91}, "created_at": "2026-07-19T15:02:19.466275"}
+{"signal_type": "EXECUTIVE_INTELLIGENCE_SIGNAL", "priority": "CRITICAL", "risk_score": 91, "business_impact": {"operation": "INVENTORY", "financial_risk": 91, "customer_service_risk": 91}, "created_at": "2026-07-19T15:02:30.931734"}
+{"signal_type": "EXECUTIVE_INTELLIGENCE_SIGNAL", "priority": "CRITICAL", "risk_score": 91, "business_impact": {"operation": "INVENTORY", "financial_risk": 91, "customer_service_risk": 91}, "created_at": "2026-07-19T15:03:13.827913"}

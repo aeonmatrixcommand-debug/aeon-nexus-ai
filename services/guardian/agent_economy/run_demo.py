@@ -1,8 +1,8 @@
-from agent_economy.pool.resource_pool import AgentResourcePool
-from agent_economy.matching.capability_matcher import match_agent
-from agent_economy.allocation.task_allocator import TaskAllocator
-from agent_economy.optimization.resource_optimizer import optimize
-from agent_economy.audit.allocation_audit import log_allocation
+from .pool.resource_pool import AgentResourcePool
+from .matching.capability_matcher import match_agent
+from .allocation.task_allocator import TaskAllocator
+from .optimization.resource_optimizer import optimize
+from .audit.allocation_audit import log_allocation
 
 
 pool = AgentResourcePool()

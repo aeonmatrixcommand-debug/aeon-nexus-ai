@@ -1,8 +1,8 @@
-from executive_war_room.situation.situation_engine import analyze
-from executive_war_room.fusion.intelligence_fusion import fuse
-from executive_war_room.decision.decision_brief import generate
-from executive_war_room.command.command_board import display
-from executive_war_room.memory.executive_memory import save
+from .situation.situation_engine import analyze
+from .fusion.intelligence_fusion import fuse
+from .decision.decision_brief import generate
+from .command.command_board import display
+from .memory.executive_memory import save
 
 
 situation = analyze(

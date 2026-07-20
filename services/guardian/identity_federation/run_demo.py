@@ -1,8 +1,8 @@
-from identity_federation.identity.federation import authenticate
-from identity_federation.secrets.secrets_manager import get_secret
-from identity_federation.certificate.certificate_manager import validate
-from identity_federation.key_management.key_manager import rotate
-from identity_federation.memory.identity_memory import save
+from .identity.federation import authenticate
+from .secrets.secrets_manager import get_secret
+from .certificate.certificate_manager import validate
+from .key_management.key_manager import rotate
+from .memory.identity_memory import save
 
 
 identity = authenticate("warehouse operator")

@@ -1,8 +1,8 @@
-from executive_operating_system.decision.executive_decision import decide
-from executive_operating_system.command.command_orchestrator import orchestrate
-from executive_operating_system.governance.governance_control import validate
-from executive_operating_system.kpi.kpi_intelligence import analyze
-from executive_operating_system.memory.executive_memory import save
+from .decision.executive_decision import decide
+from .command.command_orchestrator import orchestrate
+from .governance.governance_control import validate
+from .kpi.kpi_intelligence import analyze
+from .memory.executive_memory import save
 
 
 decision = decide(

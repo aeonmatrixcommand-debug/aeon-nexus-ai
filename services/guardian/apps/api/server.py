@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from core.brain.engine import decide
-from services.event_bus.bus import bus
-from core.brain.memory import memory
+from services.guardian.core.brain.engine import decide
+from services.guardian.services.event_bus.bus import bus
+from services.guardian.core.brain.memory import memory
 
 
 app = FastAPI(

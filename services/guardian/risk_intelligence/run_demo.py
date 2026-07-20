@@ -1,8 +1,8 @@
-from risk_intelligence.detection.risk_detector import detect
-from risk_intelligence.scoring.risk_score import calculate
-from risk_intelligence.governance.governance_check import validate
-from risk_intelligence.mitigation.mitigation_planner import plan
-from risk_intelligence.memory.risk_memory import save
+from .detection.risk_detector import detect
+from .scoring.risk_score import calculate
+from .governance.governance_check import validate
+from .mitigation.mitigation_planner import plan
+from .memory.risk_memory import save
 
 
 risk = detect(

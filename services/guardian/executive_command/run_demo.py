@@ -1,8 +1,8 @@
-from executive_command.recommendation.strategy_recommendation import recommend
-from executive_command.decision.decision_engine import create_decision
-from executive_command.confidence.confidence_score import calculate_confidence
-from executive_command.approval.approval_workflow import request_approval
-from executive_command.memory.command_memory import save_command
+from .recommendation.strategy_recommendation import recommend
+from .decision.decision_engine import create_decision
+from .confidence.confidence_score import calculate_confidence
+from .approval.approval_workflow import request_approval
+from .memory.command_memory import save_command
 
 
 strategy = recommend(91)

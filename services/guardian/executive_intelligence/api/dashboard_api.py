@@ -1,6 +1,6 @@
-from executive_intelligence.kpi.kpi_engine import KPIEngine
-from executive_intelligence.risk.risk_heatmap import generate_heatmap
-from executive_intelligence.timeline.decision_timeline import add_decision
+from services.guardian.executive_intelligence.kpi.kpi_engine import KPIEngine
+from services.guardian.executive_intelligence.risk.risk_heatmap import generate_heatmap
+from services.guardian.executive_intelligence.timeline.decision_timeline import add_decision
 
 
 def executive_view():

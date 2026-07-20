@@ -1,8 +1,8 @@
-from multi_agent_orchestration.registry.agent_registry import register
-from multi_agent_orchestration.coordinator.agent_coordinator import coordinate
-from multi_agent_orchestration.dispatcher.task_dispatcher import dispatch
-from multi_agent_orchestration.monitor.agent_monitor import monitor
-from multi_agent_orchestration.memory.agent_memory import save
+from .registry.agent_registry import register
+from .coordinator.agent_coordinator import coordinate
+from .dispatcher.task_dispatcher import dispatch
+from .monitor.agent_monitor import monitor
+from .memory.agent_memory import save
 
 
 agents = [

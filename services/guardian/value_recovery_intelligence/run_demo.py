@@ -1,8 +1,8 @@
-from value_recovery_intelligence.shelf_life.shelf_monitor import monitor
-from value_recovery_intelligence.demand.demand_forecast import forecast
-from value_recovery_intelligence.waste.waste_predictor import predict
-from value_recovery_intelligence.recovery.recovery_optimizer import optimize
-from value_recovery_intelligence.memory.circular_memory import save
+from .shelf_life.shelf_monitor import monitor
+from .demand.demand_forecast import forecast
+from .waste.waste_predictor import predict
+from .recovery.recovery_optimizer import optimize
+from .memory.circular_memory import save
 
 
 shelf = monitor(

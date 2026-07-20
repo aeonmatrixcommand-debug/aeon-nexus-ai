@@ -1,4 +1,4 @@
-from telemetry_hub.collector.collector import TelemetryCollector
+from services.guardian.telemetry_hub.collector.collector import TelemetryCollector
 
 
 collector = TelemetryCollector()

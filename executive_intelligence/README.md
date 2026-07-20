@@ -1,25 +1,30 @@
 # AEON MATRIX Executive Intelligence Layer
 
-Sprint 111
+## Sprint 111
 
-Executive Flow:
+### Executive Pipeline
 
 Operational Data
-        |
-        v
+↓
 KPI Intelligence
-        |
-        v
+↓
+Risk Forecast
+↓
+Decision Intelligence
+↓
 AI Recommendation
-        |
-        v
+↓
 Business Simulation
-        |
-        v
+↓
+Governance Check
+↓
+Executive Briefing
+↓
 Executive Decision
+↓
+Command Center
 
-
-KPIs:
+## Core KPIs
 
 - OTIF
 - SLA

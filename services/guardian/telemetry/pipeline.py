@@ -3,8 +3,8 @@ AEON MATRIX Telemetry Pipeline
 """
 
 
-from telemetry.event_bus import publish
-from telemetry.event_processor import process
+from services.guardian.telemetry.event_bus import publish
+from services.guardian.telemetry.event_processor import process
 
 
 def ingest(event):

@@ -1,8 +1,8 @@
-from enterprise_os_integration.core.os_core import initialize
-from enterprise_os_integration.registry.service_registry import register
-from enterprise_os_integration.bus.ai_message_bus import publish
-from enterprise_os_integration.monitor.system_monitor import check
-from enterprise_os_integration.memory.os_memory import save
+from .core.os_core import initialize
+from .registry.service_registry import register
+from .bus.ai_message_bus import publish
+from .monitor.system_monitor import check
+from .memory.os_memory import save
 
 
 system = initialize(

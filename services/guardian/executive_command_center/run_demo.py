@@ -1,9 +1,9 @@
-from executive_command_center.signal.signal_engine import collect
-from executive_command_center.kpi.kpi_engine import calculate
-from executive_command_center.alert.risk_alert import detect
-from executive_command_center.insight.insight_engine import generate
-from executive_command_center.report.executive_report import create
-from executive_command_center.memory.executive_memory import save
+from .signal.signal_engine import collect
+from .kpi.kpi_engine import calculate
+from .alert.risk_alert import detect
+from .insight.insight_engine import generate
+from .report.executive_report import create
+from .memory.executive_memory import save
 
 
 signal = collect(

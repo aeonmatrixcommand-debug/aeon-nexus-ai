@@ -1,8 +1,8 @@
-from knowledge_graph_memory.node.knowledge_node import create
-from knowledge_graph_memory.graph.relationship_graph import connect
-from knowledge_graph_memory.retrieval.memory_search import search
-from knowledge_graph_memory.experience.experience_engine import learn
-from knowledge_graph_memory.memory.organization_memory import save
+from .node.knowledge_node import create
+from .graph.relationship_graph import connect
+from .retrieval.memory_search import search
+from .experience.experience_engine import learn
+from .memory.organization_memory import save
 
 
 node = create(

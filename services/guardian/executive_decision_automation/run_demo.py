@@ -1,8 +1,8 @@
-from executive_decision_automation.decision.decision_engine import analyze
-from executive_decision_automation.action.action_planner import recommend
-from executive_decision_automation.policy.policy_guard import validate
-from executive_decision_automation.approval.approval_router import route
-from executive_decision_automation.memory.decision_memory import save
+from .decision.decision_engine import analyze
+from .action.action_planner import recommend
+from .policy.policy_guard import validate
+from .approval.approval_router import route
+from .memory.decision_memory import save
 
 
 decision = analyze(

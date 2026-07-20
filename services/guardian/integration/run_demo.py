@@ -1,7 +1,7 @@
-from integration.event_bus.event_bus import EventBus
-from integration.connectors.security_connector import send_security_event
-from integration.connectors.intelligence_connector import send_intelligence_event
-from integration.memory.integration_memory import save
+from .event_bus.event_bus import EventBus
+from .connectors.security_connector import send_security_event
+from .connectors.intelligence_connector import send_intelligence_event
+from .memory.integration_memory import save
 
 
 bus = EventBus()

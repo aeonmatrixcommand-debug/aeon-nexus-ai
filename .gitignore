@@ -10,3 +10,4 @@ __pycache__/
 *.before_mother_brain
 *.runtime_backup
 .env.local
+guardian_audit.json
