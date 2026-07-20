@@ -4,14 +4,14 @@ Sprint 79 Foundation
 """
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, UTC
 
 
 @dataclass
 class DecisionContext:
     signal: str
     confidence: float
-    timestamp: str = datetime.utcnow().isoformat()
+    timestamp: str = datetime.now(UTC).isoformat()
 
 
 class DecisionEngine:
