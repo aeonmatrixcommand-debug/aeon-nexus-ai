@@ -1,11 +1,10 @@
 """
-AEON MATRIX SaaS Billing Engine
+AEON MATRIX Billing Engine
 Sprint 91
 """
 
 
 class BillingEngine:
-
 
     def calculate(
         self,

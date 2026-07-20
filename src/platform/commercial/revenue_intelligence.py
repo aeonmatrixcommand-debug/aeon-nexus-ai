@@ -6,7 +6,6 @@ Sprint 91
 
 class RevenueIntelligence:
 
-
     def forecast(
         self,
         customers,
