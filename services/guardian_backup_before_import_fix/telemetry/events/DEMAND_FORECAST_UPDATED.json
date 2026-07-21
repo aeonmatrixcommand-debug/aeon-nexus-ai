@@ -1,9 +1,0 @@
-{
-  "event_type": "DEMAND_FORECAST_UPDATED",
-  "sku": "",
-  "forecast_period": "",
-  "predicted_demand": 0,
-  "confidence_score": 0,
-  "demand_signal": "",
-  "timestamp": ""
-}

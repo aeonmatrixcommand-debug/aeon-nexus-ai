@@ -1,9 +1,0 @@
-{
-  "event_type": "AGENT_ORCHESTRATION_SIGNAL",
-  "agent_id": "",
-  "agent_type": "",
-  "task": "",
-  "status": "",
-  "confidence_score": 0,
-  "timestamp": ""
-}
