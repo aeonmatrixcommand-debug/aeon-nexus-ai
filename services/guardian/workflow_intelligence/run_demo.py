@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-from .discovery.process_discovery import discover
-from .generator.workflow_generator import generate
-from .execution.task_executor import execute
-from .monitor.workflow_monitor import monitor
-from .memory.process_memory import save
-=======
 from services.guardian.workflow_intelligence.discovery.process_discovery import discover
 from services.guardian.workflow_intelligence.generator.workflow_generator import generate
 from services.guardian.workflow_intelligence.execution.task_executor import execute
 from services.guardian.workflow_intelligence.monitor.workflow_monitor import monitor
 from services.guardian.workflow_intelligence.memory.process_memory import save
->>>>>>> 1df4713 (fix: migrate guardian imports to services namespace)
 
 
 process = discover(
