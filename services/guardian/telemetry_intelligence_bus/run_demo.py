@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from .event.event_bus import publish
 from .collector.signal_collector import collect
 from .analysis.signal_analyzer import analyze
 from .monitor.health_monitor import check
 from .memory.telemetry_memory import save
+=======
+from services.guardian.telemetry_intelligence_bus.event.event_bus import publish
+from services.guardian.telemetry_intelligence_bus.collector.signal_collector import collect
+from services.guardian.telemetry_intelligence_bus.analysis.signal_analyzer import analyze
+from services.guardian.telemetry_intelligence_bus.monitor.health_monitor import check
+from services.guardian.telemetry_intelligence_bus.memory.telemetry_memory import save
+>>>>>>> 1df4713 (fix: migrate guardian imports to services namespace)
 
 
 event = publish(

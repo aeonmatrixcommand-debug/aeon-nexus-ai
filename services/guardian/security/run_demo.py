@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from .identity.device_identity import verify_device
 from .identity.user_identity import verify_user
 from .authentication.token_service import create_token
@@ -5,6 +6,15 @@ from .authorization.rbac import check_permission
 from .gateway.api_guard import protect
 from .audit.security_logger import log
 from .threat.anomaly_detector import detect
+=======
+from services.guardian.security.identity.device_identity import verify_device
+from services.guardian.security.identity.user_identity import verify_user
+from services.guardian.security.authentication.token_service import create_token
+from services.guardian.security.authorization.rbac import check_permission
+from services.guardian.security.gateway.api_guard import protect
+from services.guardian.security.audit.security_logger import log
+from services.guardian.security.threat.anomaly_detector import detect
+>>>>>>> 1df4713 (fix: migrate guardian imports to services namespace)
 
 
 device = verify_device("WMS-TAB-001")

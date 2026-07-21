@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from .dependencies.dependency_audit import audit_dependencies
 from .secrets.secret_scanner import scan_secrets
 from .sbom.sbom_generator import generate_sbom
 from .zerotrust.policy_engine import verify_access
 from .runtime.runtime_signal import create_security_signal
+=======
+from services.guardian.security_hardening.dependencies.dependency_audit import audit_dependencies
+from services.guardian.security_hardening.secrets.secret_scanner import scan_secrets
+from services.guardian.security_hardening.sbom.sbom_generator import generate_sbom
+from services.guardian.security_hardening.zerotrust.policy_engine import verify_access
+from services.guardian.security_hardening.runtime.runtime_signal import create_security_signal
+>>>>>>> 1df4713 (fix: migrate guardian imports to services namespace)
 
 
 secret_scan = scan_secrets({

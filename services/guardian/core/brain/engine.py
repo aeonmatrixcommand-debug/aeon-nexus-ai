@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from services.guardian.services.forecast.engine import forecast_demand
+=======
+from services.forecast.engine import forecast_demand
+>>>>>>> 1df4713 (fix: migrate guardian imports to services namespace)
 from services.guardian.core.brain.memory import memory
 
 def decide(payload: dict):
