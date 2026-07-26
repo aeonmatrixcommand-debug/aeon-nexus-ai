@@ -2,11 +2,13 @@ import os
 
 from ai_gateway.gemini_provider import GeminiProvider
 from ai_gateway.qwen_adapter import QwenAdapter
+from ai_gateway.health import ProviderHealth
 
 
 class AEONAI:
 
     def __init__(self, provider=None):
+        self.health = ProviderHealth()
 
         provider = provider or os.getenv(
             "AEON_LLM_PROVIDER",
@@ -34,6 +36,8 @@ class AEONAI:
 
             self.provider = GeminiProvider()
             self.mode = "gemini"
+
+        self.health.check(self.mode, self.provider)
 
 
     def analyze(self, event):
