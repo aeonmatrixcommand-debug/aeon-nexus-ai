@@ -10,6 +10,9 @@ from ai_gateway.events import EventBus
 from ai_gateway.telemetry import Telemetry
 from ai_gateway.risk import RiskAnalyzer
 from ai_gateway.guardian import Guardian
+from ai_gateway.action_engine import ActionEngine
+from ai_gateway.policy import PolicyGuard
+from ai_gateway.executor import Executor
 from ai_gateway.decision import DecisionContract
 
 
@@ -24,6 +27,9 @@ class AEONAI:
         self.telemetry = Telemetry()
         self.risk = RiskAnalyzer()
         self.guardian = Guardian()
+        self.actions = ActionEngine()
+        self.policy = PolicyGuard()
+        self.executor = Executor()
         self.decision = DecisionContract()
 
         provider = provider or os.getenv(
