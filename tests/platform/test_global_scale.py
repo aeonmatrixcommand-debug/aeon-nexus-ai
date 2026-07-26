@@ -1,12 +1,12 @@
-from src.platform.global_scale.region_manager import (
+from src.aeon_platform.global_scale.region_manager import (
     RegionManager,
 )
 
-from src.platform.global_scale.tenant_isolation import (
+from src.aeon_platform.global_scale.tenant_isolation import (
     TenantIsolation,
 )
 
-from src.platform.global_scale.sla_monitor import (
+from src.aeon_platform.global_scale.sla_monitor import (
     SLAMonitor,
 )
 

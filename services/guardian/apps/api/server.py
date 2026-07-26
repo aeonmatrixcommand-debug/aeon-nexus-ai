@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from services.guardian.core.brain.engine import decide
 from services.guardian.services.event_bus.bus import bus
+from services.event_bus.bus import bus
 from services.guardian.core.brain.memory import memory
 
 

@@ -1,3 +1,37 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# AEON MATRIX Digital Twin Simulation Lab
+
+Sprint 146
+
+
+Capabilities:
+
+- What-if Simulation
+- Fleet Disruption Testing
+- Warehouse Scenario
+- Demand Shock Analysis
+- Decision Comparison
+
+
+Flow:
+
+Scenario
+
+↓
+
+Simulation
+
+↓
+
+Prediction
+
+↓
+
+Recommendation
+=======
+=======
+>>>>>>> origin/main
 # AEON MATRIX Digital Twin Simulation
 
 ## Sprint
@@ -37,3 +71,7 @@ Executive Decision
 - Autonomous Optimization
 - Multi-Agent Coordination
 - World Signal Integration
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> origin/main

@@ -11,6 +11,24 @@ def generate(prompt: str, model: str = "gemini-3.5-flash") -> str:
         return "AI Runtime Mock Ready"
 
     api_key = os.getenv("GEMINI_API_KEY")
+
+    client = genai.Client(
+        api_key=api_key
+    )
+
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.5-flash",
+            contents=prompt
+        )
+
+        return response.text
+
+    except ClientError as e:
+
+        if e.code == 429:
+            return "AI Runtime Quota Limited - Fallback Mode"
+
     client = genai.Client(api_key=api_key)
 
     try:

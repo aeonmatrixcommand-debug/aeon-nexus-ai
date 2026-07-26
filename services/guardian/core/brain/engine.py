@@ -1,4 +1,5 @@
 from services.guardian.services.forecast.engine import forecast_demand
+from services.forecast.engine import forecast_demand
 from services.guardian.core.brain.memory import memory
 
 def decide(payload: dict):

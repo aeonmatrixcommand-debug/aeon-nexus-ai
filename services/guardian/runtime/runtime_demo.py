@@ -23,6 +23,8 @@ publish_decision(
     "DemandForecast",
     response["decision"],
     response["confidence"],
+    response.decision,
+    response.confidence,
     "LOW"
 )
 

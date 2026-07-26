@@ -15,14 +15,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Configure Python Path
         run: |
-          echo "PYTHONPATH=$PWD:$PWD/services:$PWD/services/guardian" >> $GITHUB_ENV
+          echo "PYTHONPATH=$PWD:$PWD/src:$PWD/services:$PWD/services/guardian" >> $GITHUB_ENV
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -37,9 +37,6 @@ jobs:
       - name: Compile check
         run: python -m compileall services
 
-      - name: Run tests
-        run: python -m pytest -v
-
-      - name: Coverage
-        run: python -m pytest --cov=services.guardian --cov-config=.coveragerc.guardian --cov-config=.coveragerc --cov-report=term-missing --cov-fail-under=0
+      - name: Run tests with coverage
+        run: python -m pytest -v --cov=services.guardian --cov-config=.coveragerc --cov-report=term-missing --cov-fail-under=0
 
