@@ -5,6 +5,7 @@ from ai_gateway.qwen_adapter import QwenAdapter
 from ai_gateway.health import ProviderHealth
 from ai_gateway.router import ProviderRouter
 from ai_gateway.metrics import GatewayMetrics
+from ai_gateway.circuit_breaker import CircuitBreaker
 
 
 class AEONAI:
@@ -13,6 +14,7 @@ class AEONAI:
         self.health = ProviderHealth()
         self.router = ProviderRouter()
         self.metrics = GatewayMetrics()
+        self.breaker = CircuitBreaker()
 
         provider = provider or os.getenv(
             "AEON_LLM_PROVIDER",
@@ -63,7 +65,7 @@ Return:
 """
 
 
-        return self.router.execute(prompt)
+        return self.router.execute(prompt, self.breaker)
 
 
-        return self.router.execute(prompt)
+        return self.router.execute(prompt, self.breaker)

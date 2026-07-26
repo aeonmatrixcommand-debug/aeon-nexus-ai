@@ -16,7 +16,7 @@ class ProviderRouter:
         }
 
 
-    def execute(self, prompt):
+    def execute(self, prompt, breaker=None):
 
         errors = []
 
@@ -36,6 +36,8 @@ class ProviderRouter:
 
                 self.metrics[name]["success"] += 1
 
+                if breaker:
+                    breaker.record_success(name)
                 return {
                     "provider": name,
                     "result": result
