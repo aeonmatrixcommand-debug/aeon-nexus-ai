@@ -171,6 +171,7 @@ if __name__=="__main__":
         )
     )
 
+<<<<<<< HEAD
     def collect(self):
         return {
             "economic_signal": "GROWTH",
@@ -239,3 +240,5 @@ if __name__ == "__main__":
     print("AEON MATRIX GLOBAL INTELLIGENCE LAYER")
     print("=" * 75)
     print(json.dumps(OpportunityRadar().run(), indent=2))
+=======
+>>>>>>> origin/main

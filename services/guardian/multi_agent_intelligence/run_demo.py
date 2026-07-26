@@ -3,11 +3,6 @@ from .communication.agent_protocol import send
 from .delegation.task_delegator import assign
 from .coordinator.agent_coordinator import coordinate
 from .memory.agent_memory import save
-from services.guardian.multi_agent_intelligence.registry.agent_registry import register
-from services.guardian.multi_agent_intelligence.communication.agent_protocol import send
-from services.guardian.multi_agent_intelligence.delegation.task_delegator import assign
-from services.guardian.multi_agent_intelligence.coordinator.agent_coordinator import coordinate
-from services.guardian.multi_agent_intelligence.memory.agent_memory import save
 
 
 guardian = register(

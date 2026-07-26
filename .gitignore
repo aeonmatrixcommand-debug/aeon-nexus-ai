@@ -11,6 +11,10 @@ __pycache__/
 *.runtime_backup
 .env.local
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+guardian_audit.json
+>>>>>>> origin/main
 =======
 guardian_audit.json
 >>>>>>> origin/main

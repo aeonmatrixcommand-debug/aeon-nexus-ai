@@ -1,6 +1,7 @@
 # AEON MATRIX Neural Command UI
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Sprint 105
 
 React Dashboard Layer
@@ -8,6 +9,8 @@ React Dashboard Layer
 Features:
 
 =======
+=======
+>>>>>>> origin/main
 ## Sprint 105
 
 ### React Dashboard Layer
@@ -20,6 +23,9 @@ Features:
 - Real-Time Command Center
 
 #### Features
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 - Neural Core Display
 - Thermal Intelligence
@@ -28,10 +34,13 @@ Features:
 - AI Health Score
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Future:
 
 =======
+=======
+>>>>>>> origin/main
 #### Architecture
 
 Telemetry
@@ -45,6 +54,9 @@ Command Center UI
 Executive Decision
 
 #### Future
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 - WebSocket Live Update
 - Animated Core Reactor
