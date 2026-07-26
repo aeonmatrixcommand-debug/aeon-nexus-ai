@@ -17,14 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configure Python Path
-        run: |
-          echo "PYTHONPATH=$PWD:$PWD/src:$PWD/services:$PWD/services/guardian" >> $GITHUB_ENV
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
@@ -42,3 +39,7 @@ jobs:
 
       - name: Coverage
         run: python -m pytest --cov=services.guardian --cov-config=.coveragerc.guardian --cov-config=.coveragerc --cov-report=term-missing --cov-fail-under=0
+
+      - name: Configure Python Path
+        run: |
+          echo "PYTHONPATH=$PWD:$PWD/src:$PWD/services:$PWD/services/guardian" >> $GITHUB_ENV
