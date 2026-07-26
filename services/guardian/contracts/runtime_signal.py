@@ -12,9 +12,3 @@ class RuntimeSignal:
     risk_score: float = 0.0
     trace_id: str = str(uuid4())
     timestamp: str = datetime.utcnow().isoformat()
-
-
-    def __getitem__(self, key):
-        if key == "policy":
-            return "APPROVED"
-        return getattr(self, key)

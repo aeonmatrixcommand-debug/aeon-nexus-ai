@@ -1,8 +1,8 @@
-from services.guardian.digital_twin_live.state.twin_state import update
-from services.guardian.digital_twin_live.sync.live_sync import synchronize
-from services.guardian.digital_twin_live.simulation.live_simulator import simulate
-from services.guardian.digital_twin_live.impact.live_impact import analyze
-from services.guardian.digital_twin_live.memory.twin_memory import save
+from .state.twin_state import update
+from .sync.live_sync import synchronize
+from .simulation.live_simulator import simulate
+from .impact.live_impact import analyze
+from .memory.twin_memory import save
 
 
 state = update(

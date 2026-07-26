@@ -18,7 +18,3 @@ class SignalIntelligenceEngine:
             "status":
                 "OPPORTUNITY" if score >= 0.7 else "NORMAL"
         }
-
-
-    def analysis(self, signal):
-        return self.analyze(signal)
