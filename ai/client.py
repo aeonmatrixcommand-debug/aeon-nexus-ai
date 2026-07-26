@@ -1,24 +1,16 @@
 import os
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
 from google import genai
 from google.genai.errors import ClientError
 
 
-<<<<<<< HEAD
-def generate(prompt: str) -> str:
-=======
 def generate(prompt: str, model: str = "gemini-3.5-flash") -> str:
     """Generate content using Gemini with mock mode and quota fallback."""
->>>>>>> origin/main
 
     if os.getenv("RUN_LIVE_TESTS") != "1":
         return "AI Runtime Mock Ready"
 
     api_key = os.getenv("GEMINI_API_KEY")
-<<<<<<< HEAD
 
     client = genai.Client(
         api_key=api_key
@@ -37,7 +29,6 @@ def generate(prompt: str, model: str = "gemini-3.5-flash") -> str:
         if e.code == 429:
             return "AI Runtime Quota Limited - Fallback Mode"
 
-=======
     client = genai.Client(api_key=api_key)
 
     try:
@@ -50,5 +41,4 @@ def generate(prompt: str, model: str = "gemini-3.5-flash") -> str:
     except ClientError as e:
         if getattr(e, "code", None) == 429:
             return "AI Runtime Quota Limited - Fallback Mode"
->>>>>>> origin/main
         raise

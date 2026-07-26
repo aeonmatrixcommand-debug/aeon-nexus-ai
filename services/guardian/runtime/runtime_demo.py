@@ -21,13 +21,10 @@ response=gateway.request(
 
 publish_decision(
     "DemandForecast",
-<<<<<<< HEAD
     response["decision"],
     response["confidence"],
-=======
     response.decision,
     response.confidence,
->>>>>>> origin/main
     "LOW"
 )
 

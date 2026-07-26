@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 from .skills.skill_analyzer import analyze_skill
 from .coach.work_coach import AIWorkCoach
 from .learning.learning_path import create_learning_path
 from .signals.adoption_signal import create_adoption_signal
-=======
->>>>>>> origin/main
 
 
 employee = {

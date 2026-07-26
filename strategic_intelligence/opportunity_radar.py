@@ -3,7 +3,6 @@ from datetime import datetime
 
 
 class WorldSignalIntelligence:
-<<<<<<< HEAD
 
 
     def collect(self):
@@ -172,7 +171,6 @@ if __name__=="__main__":
         )
     )
 
-=======
     def collect(self):
         return {
             "economic_signal": "GROWTH",
@@ -241,4 +239,3 @@ if __name__ == "__main__":
     print("AEON MATRIX GLOBAL INTELLIGENCE LAYER")
     print("=" * 75)
     print(json.dumps(OpportunityRadar().run(), indent=2))
->>>>>>> origin/main
