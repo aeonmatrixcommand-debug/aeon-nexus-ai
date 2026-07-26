@@ -10,6 +10,13 @@ from ai_gateway.events import EventBus
 from ai_gateway.telemetry import Telemetry
 from ai_gateway.risk import RiskAnalyzer
 from ai_gateway.guardian import Guardian
+from ai_gateway.runtime.event_loop import EventLoop
+from ai_gateway.runtime.decision_feedback import DecisionFeedback
+from ai_gateway.runtime.health import SystemHealth
+from ai_gateway.runtime.orchestrator import RuntimeOrchestrator
+from ai_gateway.runtime.state import RuntimeState
+from ai_gateway.runtime.lifecycle import LifecycleManager
+from ai_gateway.runtime.monitor import RuntimeMonitor
 from ai_gateway.command_center import CommandCenter
 from ai_gateway.approval import ApprovalGate
 from ai_gateway.audit import AuditTrail
@@ -17,6 +24,8 @@ from ai_gateway.rollback import RollbackEngine
 from ai_gateway.action_engine import ActionEngine
 from ai_gateway.policy import PolicyGuard
 from ai_gateway.executor import Executor
+from ai_gateway.planner import AgentPlanner
+from ai_gateway.policy.engine import PolicyEngine
 from ai_gateway.decision import DecisionContract
 
 
@@ -31,6 +40,13 @@ class AEONAI:
         self.telemetry = Telemetry()
         self.risk = RiskAnalyzer()
         self.guardian = Guardian()
+        self.events_loop = EventLoop()
+        self.feedback = DecisionFeedback()
+        self.lifecycle = LifecycleManager()
+        self.health = SystemHealth()
+        self.runtime = RuntimeState()
+        self.lifecycle = LifecycleManager()
+        self.monitor = RuntimeMonitor()
         self.command = CommandCenter()
         self.approval = ApprovalGate()
         self.audit = AuditTrail()
@@ -38,6 +54,18 @@ class AEONAI:
         self.actions = ActionEngine()
         self.policy = PolicyGuard()
         self.executor = Executor()
+        self.planner = AgentPlanner()
+        self.policy = PolicyEngine()
+
+        
+        self.orchestrator = RuntimeOrchestrator(
+            self.lifecycle,
+            self.events_loop,
+            self.feedback,
+            self.health,
+            self.executor,
+            self.policy
+        )
         self.decision = DecisionContract()
 
         provider = provider or os.getenv(
