@@ -37,9 +37,6 @@ jobs:
       - name: Compile check
         run: python -m compileall services
 
-      - name: Run tests
-        run: python -m pytest -v
-
-      - name: Coverage
-        run: python -m pytest --cov=services.guardian --cov-config=.coveragerc --cov-report=term-missing --cov-fail-under=0
+      - name: Run tests with coverage
+        run: python -m pytest -v --cov=services.guardian --cov-config=.coveragerc --cov-report=term-missing --cov-fail-under=0
 
