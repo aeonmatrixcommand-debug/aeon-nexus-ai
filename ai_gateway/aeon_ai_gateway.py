@@ -51,6 +51,7 @@ class AEONAI:
         self.router.register(self.mode, self.provider)
 
 
+
     def analyze(self, event):
 
         prompt = f"""
@@ -69,7 +70,27 @@ Return:
 """
 
 
-        return self.router.execute(prompt, self.breaker)
+        result = self.router.execute(
+            prompt,
+            self.breaker
+        )
 
 
-        return self.router.execute(prompt, self.breaker)
+        self.events.publish(
+            "AI_DECISION",
+            {
+                "provider": self.mode,
+                "event": event
+            }
+        )
+
+
+        self.telemetry.capture(
+            self.mode,
+            event,
+            result
+        )
+
+
+        return result
+
