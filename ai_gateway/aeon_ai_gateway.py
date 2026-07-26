@@ -13,6 +13,7 @@ from ai_gateway.guardian import Guardian
 from ai_gateway.runtime.event_loop import EventLoop
 from ai_gateway.runtime.decision_feedback import DecisionFeedback
 from ai_gateway.runtime.health import SystemHealth
+from ai_gateway.runtime.orchestrator import RuntimeOrchestrator
 from ai_gateway.runtime.state import RuntimeState
 from ai_gateway.runtime.lifecycle import LifecycleManager
 from ai_gateway.runtime.monitor import RuntimeMonitor
@@ -40,6 +41,13 @@ class AEONAI:
         self.events_loop = EventLoop()
         self.feedback = DecisionFeedback()
         self.health = SystemHealth()
+        self.orchestrator = RuntimeOrchestrator(
+            self.lifecycle,
+            self.events_loop,
+            self.feedback,
+            self.health,
+            self.executor
+        )
         self.runtime = RuntimeState()
         self.lifecycle = LifecycleManager()
         self.monitor = RuntimeMonitor()
