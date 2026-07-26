@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, UTC
 
 
 @dataclass
@@ -8,7 +8,7 @@ class Experience:
     action: str
     outcome: str
     score: float
-    timestamp: datetime = field(default_factory=datetime.utcnow)
+    timestamp: datetime = field(default_factory=lambda: datetime.now(UTC))
 
 
 class AdaptiveMemory:
