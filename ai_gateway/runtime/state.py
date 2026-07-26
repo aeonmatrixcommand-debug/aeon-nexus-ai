@@ -1,30 +1,25 @@
 from datetime import datetime
 
 
-class RuntimeState:
+class AgentState:
 
     def __init__(self):
-        self.state = {
-            "status": "IDLE",
-            "action": None,
-            "history": []
-        }
+        self.state = "CREATED"
+        self.history = []
 
 
-    def update(self, status, action=None):
+    def update(self, state):
 
-        record = {
-            "status": status,
-            "action": action,
+        self.state = state
+
+        self.history.append({
+            "state": state,
             "timestamp": datetime.utcnow().isoformat()
+        })
+
+
+    def get(self):
+        return {
+            "current": self.state,
+            "history": self.history
         }
-
-        self.state["status"] = status
-        self.state["action"] = action
-        self.state["history"].append(record)
-
-        return record
-
-
-    def current(self):
-        return self.state
