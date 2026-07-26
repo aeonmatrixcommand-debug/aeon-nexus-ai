@@ -1,12 +1,12 @@
-from src.platform.commercial.usage_analytics import (
+from src.aeon_platform.commercial.usage_analytics import (
     UsageAnalytics,
 )
 
-from src.platform.commercial.billing_engine import (
+from src.aeon_platform.commercial.billing_engine import (
     BillingEngine,
 )
 
-from src.platform.commercial.revenue_intelligence import (
+from src.aeon_platform.commercial.revenue_intelligence import (
     RevenueIntelligence,
 )
 

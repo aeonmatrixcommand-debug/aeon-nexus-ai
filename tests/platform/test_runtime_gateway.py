@@ -1,4 +1,4 @@
-from services.platform.runtime_gateway import RuntimeGateway
+from services.aeon_platform.runtime_gateway import RuntimeGateway
 
 
 def test_gateway_health():
