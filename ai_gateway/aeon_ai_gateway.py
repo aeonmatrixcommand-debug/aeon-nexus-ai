@@ -10,6 +10,9 @@ from ai_gateway.events import EventBus
 from ai_gateway.telemetry import Telemetry
 from ai_gateway.risk import RiskAnalyzer
 from ai_gateway.guardian import Guardian
+from ai_gateway.runtime.event_loop import EventLoop
+from ai_gateway.runtime.decision_feedback import DecisionFeedback
+from ai_gateway.runtime.health import SystemHealth
 from ai_gateway.runtime.state import RuntimeState
 from ai_gateway.runtime.lifecycle import LifecycleManager
 from ai_gateway.runtime.monitor import RuntimeMonitor
@@ -34,6 +37,9 @@ class AEONAI:
         self.telemetry = Telemetry()
         self.risk = RiskAnalyzer()
         self.guardian = Guardian()
+        self.events_loop = EventLoop()
+        self.feedback = DecisionFeedback()
+        self.health = SystemHealth()
         self.runtime = RuntimeState()
         self.lifecycle = LifecycleManager()
         self.monitor = RuntimeMonitor()
