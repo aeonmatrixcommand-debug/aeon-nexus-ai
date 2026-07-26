@@ -14,10 +14,6 @@ class LearningBridge:
         }
 
         self.events.append(payload)
-
-            "timestamp": datetime.now(UTC).isoformat(),
-        }
-        self.events.append(payload)
         return payload
 
     def get_events(self):
