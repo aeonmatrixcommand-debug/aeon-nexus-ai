@@ -40,6 +40,7 @@ class AEONAI:
         self.guardian = Guardian()
         self.events_loop = EventLoop()
         self.feedback = DecisionFeedback()
+        self.lifecycle = Lifecycle()
         self.health = SystemHealth()
         self.orchestrator = RuntimeOrchestrator(
             self.lifecycle,
