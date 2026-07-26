@@ -42,13 +42,6 @@ class AEONAI:
         self.feedback = DecisionFeedback()
         self.lifecycle = LifecycleManager()
         self.health = SystemHealth()
-        self.orchestrator = RuntimeOrchestrator(
-            self.lifecycle,
-            self.events_loop,
-            self.feedback,
-            self.health,
-            self.executor
-        )
         self.runtime = RuntimeState()
         self.lifecycle = LifecycleManager()
         self.monitor = RuntimeMonitor()
@@ -59,6 +52,15 @@ class AEONAI:
         self.actions = ActionEngine()
         self.policy = PolicyGuard()
         self.executor = Executor()
+
+        
+        self.orchestrator = RuntimeOrchestrator(
+            self.lifecycle,
+            self.events_loop,
+            self.feedback,
+            self.health,
+            self.executor
+        )
         self.decision = DecisionContract()
 
         provider = provider or os.getenv(
