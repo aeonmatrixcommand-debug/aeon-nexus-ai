@@ -17,12 +17,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-<<<<<<< HEAD
       - name: Configure Python Path
         run: |
           echo "PYTHONPATH=$PWD:$PWD/src:$PWD/services:$PWD/services/guardian" >> $GITHUB_ENV
-=======
->>>>>>> origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
