@@ -8,6 +8,9 @@ from ai_gateway.metrics import GatewayMetrics
 from ai_gateway.circuit_breaker import CircuitBreaker
 from ai_gateway.events import EventBus
 from ai_gateway.telemetry import Telemetry
+from ai_gateway.risk import RiskAnalyzer
+from ai_gateway.guardian import Guardian
+from ai_gateway.decision import DecisionContract
 
 
 class AEONAI:
@@ -19,6 +22,9 @@ class AEONAI:
         self.breaker = CircuitBreaker()
         self.events = EventBus()
         self.telemetry = Telemetry()
+        self.risk = RiskAnalyzer()
+        self.guardian = Guardian()
+        self.decision = DecisionContract()
 
         provider = provider or os.getenv(
             "AEON_LLM_PROVIDER",
@@ -92,5 +98,27 @@ Return:
         )
 
 
-        return result
+        risk = self.risk.analyze(
+            event
+        )
+
+
+        guardian_result = self.guardian.evaluate(
+            risk
+        )
+
+
+        final_decision = self.decision.build(
+            result,
+            guardian_result
+        )
+
+
+        self.events.publish(
+            "GUARDIAN_DECISION",
+            final_decision
+        )
+
+
+        return final_decision
 
