@@ -1,7 +1,10 @@
 class SystemHealth:
 
+    def __init__(self):
+        self.last_status = {}
+
     def check(self, mode=None, provider=None):
-        return {
+        self.last_status = {
             "gateway": "ONLINE",
             "guardian": "ONLINE",
             "executor": "ONLINE",
@@ -9,3 +12,5 @@ class SystemHealth:
             "mode": mode,
             "provider": provider
         }
+
+        return self.last_status
