@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from .goal.goal_engine import create_goal
 from .forecast.forecast_engine import forecast
 from .scenario.scenario_planner import create_scenario
 from .evaluation.strategy_evaluator import evaluate
 from .memory.strategy_memory import save
+=======
+from services.guardian.strategic_intelligence.goal.goal_engine import create_goal
+from services.guardian.strategic_intelligence.forecast.forecast_engine import forecast
+from services.guardian.strategic_intelligence.scenario.scenario_planner import create_scenario
+from services.guardian.strategic_intelligence.evaluation.strategy_evaluator import evaluate
+from services.guardian.strategic_intelligence.memory.strategy_memory import save
+>>>>>>> origin/main
 
 
 goal = create_goal(

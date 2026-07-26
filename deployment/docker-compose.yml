@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+
+  mother-brain:
+    build: .
+    command: python -m services.mother_brain
+    restart: unless-stopped
+
+  guardian-api:
+    build: .
+    command: uvicorn services.guardian.matrix_core:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped

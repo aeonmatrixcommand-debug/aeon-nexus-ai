@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from .entity.twin_entity import create_entity
 from .simulation.simulation_engine import simulate
 from .impact.impact_analyzer import analyze
 from .prediction.predictive_engine import predict
 from .memory.simulation_memory import save
+=======
+from services.guardian.digital_twin_predictive.entity.twin_entity import create_entity
+from services.guardian.digital_twin_predictive.simulation.simulation_engine import simulate
+from services.guardian.digital_twin_predictive.impact.impact_analyzer import analyze
+from services.guardian.digital_twin_predictive.prediction.predictive_engine import predict
+from services.guardian.digital_twin_predictive.memory.simulation_memory import save
+>>>>>>> origin/main
 
 
 warehouse = create_entity(

@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from .registry.agent_registry import register_agent
 from .workflow.workflow_engine import create_workflow
 from .allocation.task_allocator import allocate
 from .guardian.policy_gate import check_policy
 from .memory.execution_memory import save_execution
+=======
+from services.guardian.agent_orchestration.registry.agent_registry import register_agent
+from services.guardian.agent_orchestration.workflow.workflow_engine import create_workflow
+from services.guardian.agent_orchestration.allocation.task_allocator import allocate
+from services.guardian.agent_orchestration.guardian.policy_gate import check_policy
+from services.guardian.agent_orchestration.memory.execution_memory import save_execution
+>>>>>>> origin/main
 
 
 agents = [

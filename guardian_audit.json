@@ -34,6 +34,7 @@
       ],
       "status": "COMPLIANT"
     }
+<<<<<<< HEAD
   },
   {
     "event": "\nWarehouse DC:\nInventory mismatch detected\nOrder delay increasing\nDriver ETA unstable\n",
@@ -394,5 +395,7 @@
       ],
       "status": "COMPLIANT"
     }
+=======
+>>>>>>> origin/main
   }
 ]
