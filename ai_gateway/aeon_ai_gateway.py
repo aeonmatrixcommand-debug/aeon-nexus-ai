@@ -6,6 +6,8 @@ from ai_gateway.health import ProviderHealth
 from ai_gateway.router import ProviderRouter
 from ai_gateway.metrics import GatewayMetrics
 from ai_gateway.circuit_breaker import CircuitBreaker
+from ai_gateway.events import EventBus
+from ai_gateway.telemetry import Telemetry
 
 
 class AEONAI:
@@ -15,6 +17,8 @@ class AEONAI:
         self.router = ProviderRouter()
         self.metrics = GatewayMetrics()
         self.breaker = CircuitBreaker()
+        self.events = EventBus()
+        self.telemetry = Telemetry()
 
         provider = provider or os.getenv(
             "AEON_LLM_PROVIDER",
