@@ -1,12 +1,12 @@
-from src.platform.federation.agent_registry import (
+from src.aeon_platform.federation.agent_registry import (
     AgentRegistry,
 )
 
-from src.platform.federation.trust_engine import (
+from src.aeon_platform.federation.trust_engine import (
     AgentTrustEngine,
 )
 
-from src.platform.federation.exchange_hub import (
+from src.aeon_platform.federation.exchange_hub import (
     ExchangeHub,
 )
 

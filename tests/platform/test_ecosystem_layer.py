@@ -1,12 +1,12 @@
-from src.platform.ecosystem.capability_registry import (
+from src.aeon_platform.ecosystem.capability_registry import (
     CapabilityRegistry,
 )
 
-from src.platform.ecosystem.partner_gateway import (
+from src.aeon_platform.ecosystem.partner_gateway import (
     PartnerGateway,
 )
 
-from src.platform.ecosystem.plugin_marketplace import (
+from src.aeon_platform.ecosystem.plugin_marketplace import (
     PluginMarketplace,
 )
 

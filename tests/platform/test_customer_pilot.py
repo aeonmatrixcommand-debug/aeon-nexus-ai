@@ -1,12 +1,12 @@
-from src.platform.customer.pilot_manager import (
+from src.aeon_platform.customer.pilot_manager import (
     PilotManager,
 )
 
-from src.platform.customer.feedback_engine import (
+from src.aeon_platform.customer.feedback_engine import (
     FeedbackEngine,
 )
 
-from src.platform.customer.success_metrics import (
+from src.aeon_platform.customer.success_metrics import (
     SuccessMetrics,
 )
 

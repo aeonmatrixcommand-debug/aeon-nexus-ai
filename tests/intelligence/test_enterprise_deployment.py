@@ -1,12 +1,12 @@
-from src.platform.enterprise.tenant_manager import (
+from src.aeon_platform.enterprise.tenant_manager import (
     TenantManager,
 )
 
-from src.platform.enterprise.deployment_manager import (
+from src.aeon_platform.enterprise.deployment_manager import (
     DeploymentManager,
 )
 
-from src.platform.enterprise.usage_meter import (
+from src.aeon_platform.enterprise.usage_meter import (
     UsageMeter,
 )
 
