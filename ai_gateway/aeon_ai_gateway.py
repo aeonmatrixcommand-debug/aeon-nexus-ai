@@ -24,6 +24,7 @@ from ai_gateway.rollback import RollbackEngine
 from ai_gateway.action_engine import ActionEngine
 from ai_gateway.policy import PolicyGuard
 from ai_gateway.executor import Executor
+from ai_gateway.policy.engine import PolicyEngine
 from ai_gateway.decision import DecisionContract
 
 
@@ -52,6 +53,7 @@ class AEONAI:
         self.actions = ActionEngine()
         self.policy = PolicyGuard()
         self.executor = Executor()
+        self.policy = PolicyEngine()
 
         
         self.orchestrator = RuntimeOrchestrator(
@@ -59,7 +61,8 @@ class AEONAI:
             self.events_loop,
             self.feedback,
             self.health,
-            self.executor
+            self.executor,
+            self.policy
         )
         self.decision = DecisionContract()
 

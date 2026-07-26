@@ -6,16 +6,26 @@ class RuntimeOrchestrator:
         events,
         feedback,
         health,
-        executor
+        executor,
+        policy
     ):
         self.lifecycle = lifecycle
         self.events = events
         self.feedback = feedback
         self.health = health
         self.executor = executor
+        self.policy = policy
 
 
     def execute(self, action):
+
+        decision = self.policy.evaluate(action)
+
+        if decision.decision != "APPROVE":
+            return {
+                "status": "BLOCKED",
+                "policy": decision.to_dict()
+            }
 
         self.lifecycle.move("APPROVED")
 
