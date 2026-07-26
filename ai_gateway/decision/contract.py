@@ -5,8 +5,8 @@ class DecisionContract:
 
     def __init__(
         self,
-        decision,
-        confidence,
+        decision="PENDING",
+        confidence=0.0,
         reason=None
     ):
         self.decision = decision
@@ -16,7 +16,6 @@ class DecisionContract:
 
 
     def to_dict(self):
-
         return {
             "decision": self.decision,
             "confidence": self.confidence,
