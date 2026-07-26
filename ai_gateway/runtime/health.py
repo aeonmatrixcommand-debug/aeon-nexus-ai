@@ -9,6 +9,7 @@ class SystemHealth:
             "guardian": "ONLINE",
             "executor": "ONLINE",
             "runtime": "ONLINE",
+            "runtime_state": "READY",
             "mode": mode,
             "provider": provider
         }

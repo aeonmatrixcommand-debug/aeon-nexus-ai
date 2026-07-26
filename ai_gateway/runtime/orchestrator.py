@@ -24,18 +24,25 @@ class RuntimeOrchestrator:
             "action": action
         })
 
+
         self.lifecycle.move("EXECUTING")
 
         result = self.executor.execute(action)
+
+
+        self.lifecycle.move("COMPLETED")
+
 
         self.feedback.capture(
             action,
             result
         )
 
+
         self.events.emit({
             "type": "ACTION_COMPLETED",
             "result": result
         })
+
 
         return result
