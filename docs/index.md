@@ -1,11 +1,15 @@
 # AEON Nexus AI
 
-Enterprise AI Platform for Warehouse, Logistics, Financial Intelligence and Cognitive Operations.
+## Enterprise AI Platform
+
+Enterprise AI Platform for Warehouse Management, Logistics, Financial Intelligence, Autonomous AI Agents, and Cognitive Enterprise Operations.
 
 ## Architecture
 
-- Multi-Agent AI Runtime
 - AI Gateway
+- Multi-Agent Runtime
+- Agent Marketplace
+- Agent Memory Network
 - Decision Intelligence
 - Warehouse Intelligence
 - Logistics Intelligence
