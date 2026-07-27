@@ -104,3 +104,32 @@ Nuttida Goedseesuk
 Enterprise AI Engineer
 
 AEON MATRIX • AEON Nexus AI
+
+---
+
+# Enterprise Architecture
+
+See the full architecture:
+
+- docs/architecture/architecture.md
+
+![Architecture](docs/images/architecture.png)
+
+---
+
+# Dashboard Preview
+
+| Command Center | Warehouse |
+|---------------|-----------|
+| ![](docs/screenshots/dashboard-overview.png) | ![](docs/screenshots/warehouse-intelligence.png) |
+
+| Logistics | AI Runtime |
+|-----------|------------|
+| ![](docs/screenshots/logistics-dashboard.png) | ![](docs/screenshots/ai-agent-runtime.png) |
+
+---
+
+## Documentation
+
+Project documentation is available in the **docs/** directory and can also be published through GitHub Pages.
+
