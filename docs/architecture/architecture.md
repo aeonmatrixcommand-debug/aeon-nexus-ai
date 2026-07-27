@@ -23,3 +23,10 @@ D5 --> E
 
 E --> F[REST APIs]
 E --> G[Executives]
+
+---
+
+## AEON MATRIX Enterprise Architecture
+
+![AEON MATRIX Architecture](../images/aeon-matrix-architecture.jpg)
+
