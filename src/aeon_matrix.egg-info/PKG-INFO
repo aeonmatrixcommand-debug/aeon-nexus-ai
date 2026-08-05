@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: aeon-matrix
+Version: 0.1.0
+Summary: AEON MATRIX Enterprise AI Platform
+Requires-Python: >=3.10
+Requires-Dist: gradio>=5.0.0
+Requires-Dist: fastapi>=0.116.0
+Requires-Dist: uvicorn>=0.35.0
+Requires-Dist: pydantic>=2.11.0
+Requires-Dist: pytest>=8.4.0
+Requires-Dist: pytest-cov>=6.2.0
+Requires-Dist: requests>=2.32.0
+Requires-Dist: httpx>=0.28.0
+Requires-Dist: numpy>=2.3.0
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: python-dotenv>=1.1.0
+Requires-Dist: rich>=14.0.0
+Requires-Dist: typing_extensions>=4.14.0
