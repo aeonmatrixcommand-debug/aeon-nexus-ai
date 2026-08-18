@@ -12,6 +12,9 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, Dict, Iterable, Optional
 
+from src.intelligence.ecdt.decision_memory import DecisionMemory
+from src.intelligence.ecdt.decision_record import DecisionRecord
+
 from digital_twin.world_signal.signal_collector import SignalCollector
 from digital_twin.engine.reasoning_engine import ReasoningEngine
 from digital_twin.simulation.scenario_simulator import ScenarioSimulator
@@ -42,6 +45,7 @@ class ECDTRuntime:
         *,
         executor: Optional[Any] = None,
         execution_mode: ECDTExecutionMode = ECDTExecutionMode.DRY_RUN,
+        decision_memory: Optional[DecisionMemory] = None,
     ) -> None:
         self.signal_collector = SignalCollector()
         self.reasoning_engine = ReasoningEngine()
@@ -53,7 +57,53 @@ class ECDTRuntime:
         self.learning_engine = LearningEngine()
 
         self.executor = executor
+        self.decision_memory = (
+            decision_memory
+            if decision_memory is not None
+            else DecisionMemory()
+        )
         self.execution_mode = execution_mode
+
+    def _finalize_decision(
+        self,
+        trace: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        """Persist the final governed decision trace."""
+
+        governance = trace.get("governance", {})
+
+        record = DecisionRecord(
+            proposed_action=trace["action"],
+            evidence=trace.get("sense", {}).get(
+                "signals",
+                [],
+            ),
+            reasoning=trace.get("think", {}),
+            simulation=trace.get("simulate", {}),
+            policy=governance.get("policy", {}),
+            approval=governance.get("approval", {}),
+            execution=trace.get("execution_result", {}),
+            verification=trace.get("verification", {}),
+            outcome={
+                "status": trace.get("status"),
+                "executed": trace.get("executed", False),
+                "execution_mode": trace.get(
+                    "execution_mode"
+                ),
+                "execution_guard": governance.get(
+                    "execution_guard",
+                    {},
+                ),
+            },
+        )
+
+        decision_id = self.decision_memory.append(record)
+
+        trace["decision_id"] = decision_id
+        trace["correlation_id"] = record.correlation_id
+        trace["decision_recorded"] = True
+
+        return trace
 
     def run(
         self,
@@ -92,12 +142,12 @@ class ECDTRuntime:
                 trace["governance"]["approval"] = approval
                 trace["status"] = "HUMAN_REQUIRED"
                 trace["executed"] = False
-                return trace
+                return self._finalize_decision(trace)
 
             if not human_approved:
                 trace["status"] = "BLOCKED"
                 trace["executed"] = False
-                return trace
+                return self._finalize_decision(trace)
 
         # Human approval is never inferred.
         if policy.get("approval_required", False):
@@ -107,7 +157,7 @@ class ECDTRuntime:
                 )
                 trace["status"] = "HUMAN_REQUIRED"
                 trace["executed"] = False
-                return trace
+                return self._finalize_decision(trace)
 
             trace["governance"]["approval"] = (
                 self.approval_engine.approve(action)
@@ -120,13 +170,13 @@ class ECDTRuntime:
         if not guard.get("allowed", False):
             trace["status"] = "BLOCKED"
             trace["executed"] = False
-            return trace
+            return self._finalize_decision(trace)
 
         # Default safe mode.
         if self.execution_mode == ECDTExecutionMode.DRY_RUN:
             trace["status"] = "DRY_RUN"
             trace["executed"] = False
-            return trace
+            return self._finalize_decision(trace)
 
         if self.execution_mode == ECDTExecutionMode.HUMAN_REQUIRED:
             if not human_approved:
@@ -135,13 +185,13 @@ class ECDTRuntime:
                 )
                 trace["status"] = "HUMAN_REQUIRED"
                 trace["executed"] = False
-                return trace
+                return self._finalize_decision(trace)
 
         # EXECUTE requires an explicit adapter.
         if self.executor is None:
             trace["status"] = "EXECUTOR_REQUIRED"
             trace["executed"] = False
-            return trace
+            return self._finalize_decision(trace)
 
         result = self.executor.execute(action)
 
@@ -158,4 +208,4 @@ class ECDTRuntime:
         else:
             trace["status"] = "VERIFICATION_FAILED"
 
-        return trace
+        return self._finalize_decision(trace)
