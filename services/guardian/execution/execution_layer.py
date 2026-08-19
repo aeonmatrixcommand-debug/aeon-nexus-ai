@@ -2,6 +2,7 @@ from services.guardian.execution.action_executor import ActionExecutor
 from services.guardian.execution.workflow_engine import WorkflowEngine
 from services.guardian.execution.audit_trail import AuditTrail
 from services.guardian.execution.authorization import AuthorizationIssuer
+from services.guardian.execution.authorization_consumption import AuthorizationConsumptionRegistry
 from services.guardian.governance.policy_engine import PolicyEngine
 from services.guardian.governance.approval_gate import ApprovalGate
 
@@ -21,11 +22,16 @@ class AutonomousExecutionLayer:
     Boolean authorization flags are not trusted.
     """
 
-    def __init__(self):
+    def __init__(self, authorization_consumption=None):
         self.executor = ActionExecutor()
         self.policy = PolicyEngine()
         self.approval = ApprovalGate()
         self.authority = AuthorizationIssuer()
+        self.authorization_consumption = (
+            authorization_consumption
+            if authorization_consumption is not None
+            else AuthorizationConsumptionRegistry()
+        )
         self.workflow = WorkflowEngine()
         self.audit = AuditTrail()
 
@@ -72,6 +78,16 @@ class AutonomousExecutionLayer:
             return {
                 "status": "BLOCKED",
                 "reason": "EXECUTION_AUTHORIZATION_REQUIRED",
+                "policy": policy,
+                "approval": approval,
+            }
+
+        if not self.authorization_consumption.try_consume(
+            execution_authority.authorization_id
+        ):
+            return {
+                "status": "BLOCKED",
+                "reason": "EXECUTION_AUTHORITY_ALREADY_CONSUMED",
                 "policy": policy,
                 "approval": approval,
             }
