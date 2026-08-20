@@ -1,35 +1,53 @@
-from threading import Lock
+from services.guardian.execution.authorization_consumption_store import (
+    InMemoryAuthorizationConsumptionStore,
+)
 
 
 class AuthorizationConsumptionRegistry:
     """
-    Tracks execution authorities consumed by this execution boundary.
+    Execution-authority consumption boundary.
 
-    try_consume() is the atomic claim operation. Exactly one caller
-    can successfully claim a given authorization_id per registry.
+    The registry delegates atomic consumption to a store.
+
+    A store may be shared by multiple registry instances.
     """
 
-    def __init__(self):
-        self._consumed = set()
-        self._lock = Lock()
+    def __init__(self, store=None, backend=None):
+        if store is not None and backend is not None:
+            raise ValueError(
+                "AUTHORIZATION_CONSUMPTION_STORE_CONFLICT"
+            )
+
+        # Compatibility with the RED contract that introduced
+        # backend injection. A dict backend is converted into a
+        # shared store held by the backend itself.
+        if backend is not None:
+            if not isinstance(backend, dict):
+                raise TypeError(
+                    "AUTHORIZATION_CONSUMPTION_BACKEND_INVALID"
+                )
+
+            store = backend.get(
+                "_authorization_consumption_store"
+            )
+
+            if store is None:
+                store = InMemoryAuthorizationConsumptionStore()
+                backend[
+                    "_authorization_consumption_store"
+                ] = store
+
+        self._store = (
+            store
+            if store is not None
+            else InMemoryAuthorizationConsumptionStore()
+        )
 
     def is_consumed(self, authorization_id):
-        if not authorization_id:
-            raise ValueError("AUTHORIZATION_ID_REQUIRED")
-
-        with self._lock:
-            return authorization_id in self._consumed
+        return self._store.is_consumed(authorization_id)
 
     def try_consume(self, authorization_id):
-        if not authorization_id:
-            raise ValueError("AUTHORIZATION_ID_REQUIRED")
-
-        with self._lock:
-            if authorization_id in self._consumed:
-                return False
-
-            self._consumed.add(authorization_id)
-            return True
+        return self._store.try_consume(authorization_id)
 
     def consume(self, authorization_id):
         """
