@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // AEON MATRIX
+    // Security baseline: DENY BY DEFAULT
+    //
+    // Client access must be explicitly authorized
+    // collection-by-collection in future rules.
+    //
+    // Server workloads using Google Cloud IAM /
+    // Firebase Admin SDK are not authorized by
+    // Firestore Security Rules.
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
