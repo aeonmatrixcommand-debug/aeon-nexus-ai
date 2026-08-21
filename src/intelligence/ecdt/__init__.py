@@ -1,5 +1,7 @@
 """AEON MATRIX Enterprise Cognitive Digital Twin."""
 
+from .governed_scenario_integration import ECDTGovernedScenarioIntegration
+
 from .scenario_engine import ECDTScenarioEngine, ScenarioEvaluation
 
 from .runtime import (
@@ -8,6 +10,7 @@ from .runtime import (
 )
 
 __all__ = [
+    "ECDTGovernedScenarioIntegration",
     "ECDTScenarioEngine",
     "ScenarioEvaluation",
     "ECDTExecutionMode",
