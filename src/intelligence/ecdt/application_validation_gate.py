@@ -28,9 +28,6 @@ class ApplicationValidationGate:
         if data.get("status") != "REQUESTED":
             reasons.append("REQUEST_NOT_REQUESTED")
 
-        if not str(data.get("authorization_id", "")).strip():
-            reasons.append("AUTHORIZATION_LINK_REQUIRED")
-
         if not str(data.get("proposal_id", "")).strip():
             reasons.append("PROPOSAL_LINK_REQUIRED")
 

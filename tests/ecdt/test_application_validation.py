@@ -46,13 +46,14 @@ def test_non_requested_is_rejected():
     assert "REQUEST_NOT_REQUESTED" in result.reasons
 
 
-def test_missing_authorization_is_rejected():
+def test_missing_authorization_is_allowed_at_application_validation():
     data = request()
     data.pop("authorization_id")
     result = ApplicationValidationGate().evaluate(
         data, policy={"allowed": True}
     )
-    assert "AUTHORIZATION_LINK_REQUIRED" in result.reasons
+    assert result.status == "VALIDATED"
+    assert "AUTHORIZATION_LINK_REQUIRED" not in result.reasons
 
 
 def test_missing_proposal_is_rejected():
