@@ -1,13 +1,69 @@
+# ============================================================
+# AEON MATRIX — repository hygiene / secret protection
+# ============================================================
 
 # Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 .pytest_cache/
 .coverage
+.coverage.*
+htmlcov/
+coverage.xml
 
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python packaging/build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Credentials / service accounts
+credentials.json
+credentials-*.json
+service-account.json
+service-account-*.json
+application_default_credentials.json
+
+# Private keys / certificate bundles
+*.key
+*.p12
+*.pfx
+
+# Google Cloud local credentials
+.gcloud/
+application_default_credentials/
+
+# Runtime / generated state
 *.backup
 *.before_execution_fabric
 *.before_mother_brain
 *.runtime_backup
-.env.local
 guardian_audit.json
+
+# Temporary / local files
+*.tmp
+*.temp
+*.swp
+*.swo
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+logs/
