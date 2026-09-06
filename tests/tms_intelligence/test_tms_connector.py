@@ -32,3 +32,32 @@ def test_boolean_distance_is_rejected():
 
     assert result["status"] == "NO_DECISION"
     assert result["executed"] is False
+
+def test_zero_distance_is_rejected():
+    result = TMSReadOnlyConnector().analyze_route({"distance": 0})
+
+    assert result["status"] == "NO_DECISION"
+    assert result["executed"] is False
+
+
+def test_negative_distance_is_rejected():
+    result = TMSReadOnlyConnector().analyze_route({"distance": -10})
+
+    assert result["status"] == "NO_DECISION"
+    assert result["executed"] is False
+
+
+def test_string_distance_is_rejected():
+    result = TMSReadOnlyConnector().analyze_route({"distance": "100"})
+
+    assert result["status"] == "NO_DECISION"
+    assert result["executed"] is False
+    assert result["reason"] == "positive_numeric_distance_required"
+
+
+def test_non_mapping_route_is_rejected():
+    result = TMSReadOnlyConnector().analyze_route(None)
+
+    assert result["status"] == "NO_DECISION"
+    assert result["executed"] is False
+    assert result["reason"] == "route_mapping_required"
