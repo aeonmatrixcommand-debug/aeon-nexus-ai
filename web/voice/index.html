@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+  <title>AEON MATRIX Thai Voice Console</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #07111f;
+      color: #eef6ff;
+      font-family: system-ui, sans-serif;
+    }
+
+    main {
+      max-width: 760px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    .panel {
+      background: #0d1b2d;
+      border: 1px solid #263b53;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+
+    .status {
+      font-size: 14px;
+      opacity: .85;
+    }
+
+    button {
+      min-height: 52px;
+      padding: 0 22px;
+      margin: 6px;
+      border-radius: 14px;
+      border: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    #transcript,
+    #response {
+      min-height: 90px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      margin: 3px;
+      border-radius: 10px;
+      background: #14283e;
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <h1>AEON MATRIX</h1>
+  <p>Thai Voice Console · ภาษาไทยเป็นภาษาหลัก</p>
+
+  <div class="panel">
+    <div class="tag">ภาษา: th-TH</div>
+    <div class="tag">Voice: Kore</div>
+    <div class="tag">Governance: ENFORCED</div>
+    <div class="tag">Execution: LOCKED</div>
+
+    <p id="status" class="status">
+      ระบบพร้อมเริ่มต้น
+    </p>
+
+    <button id="start">
+      🎙 เริ่มฟัง
+    </button>
+
+    <button id="stop" disabled>
+      ■ หยุดฟัง
+    </button>
+  </div>
+
+  <div class="panel">
+    <strong>ข้อความที่ได้ยิน</strong>
+    <div id="transcript">—</div>
+  </div>
+
+  <div class="panel">
+    <strong>AEON MATRIX</strong>
+    <div id="response">—</div>
+  </div>
+
+</main>
+
+<script src="/voice-static/voice.js"></script>
+</body>
+</html>
